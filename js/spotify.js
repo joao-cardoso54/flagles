@@ -169,8 +169,12 @@ export async function findTrack(song) {
 
 const NO_DEVICE = "Abre a app do Spotify no telemóvel, toca numa música (podes pausá-la) e volta aqui.";
 
-async function startPlayback(uri) {
-  const body = { uris: [uri], position_ms: 0 };
+// O Spotify desta conta só arranca a faixa se for tocada A PARTIR DO ÁLBUM (testado: enviar só a faixa fica parado).
+async function startPlayback(found) {
+  // antes: const body = { uris: [uri], position_ms: 0 };
+  const body = found.album
+    ? { context_uri: found.album, offset: { uri: found.uri }, position_ms: 0 }
+    : { uris: [found.uri], position_ms: 0 };
   let r = await api("PUT", "/me/player/play", body);
   if (r.status === 404 || r.status === 202) { // sem dispositivo ativo: tenta acordar o primeiro disponível
     const d = await api("GET", "/me/player/devices");
@@ -198,7 +202,7 @@ export async function playClip(song, seconds, { adaptive = true } = {}) {
   const offset = Number(read(LS.offset, 0)) || 0;
 
   const t0 = performance.now();
-  await startPlayback(found.uri);
+  await startPlayback(found);
   const rtt = performance.now() - t0;
   const started = performance.now();            // o áudio só pode começar a partir daqui
   const clip = { cancelled: false };
