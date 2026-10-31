@@ -245,3 +245,15 @@ dialog p { margin: 0 0 18px; font: 600 20px/1.25 var(--display); }
 /* ---- o disco do logótipo roda ao carregar em Jogar / Treino livre ---- */
 .mark.spinning { animation: spin-go 0.42s cubic-bezier(0.5, 0, 0.8, 0.6) both; }
 @keyframes spin-go { to { transform: rotate(540deg) scale(1.1); } }
+
+/* ---- ícone dos Beatles: as quatro cabeleiras (máscara pintada com a cor do texto) ---- */
+.ico-heads { display: inline-block; width: 28px; height: 24px; background-color: currentColor;
+  -webkit-mask: url("../icons/beatles-heads.png") center / contain no-repeat; mask: url("../icons/beatles-heads.png") center / contain no-repeat; }
+.seg.icons .ico-heads { width: 30px; height: 24px; }
+.ico-pair { display: inline-flex; align-items: center; justify-content: center; gap: 4px; width: auto; }
+.ico-heads.small { width: 22px; height: 19px; }
+.ico-flag { width: 17px; height: 17px; }
+/* "Os dois": cabeleiras + bandeira lado a lado, sem ficarem espremidas pelo tamanho fixo dos outros ícones */
+.seg.icons .ico-pair { width: auto; height: 24px; gap: 5px; }
+.seg.icons .ico-pair .ico-heads.small { width: 28px; height: 23px; }
+.seg.icons .ico-pair .ico-flag { width: 19px; height: 19px; }

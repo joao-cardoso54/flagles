@@ -260,6 +260,9 @@ function newRound() {
     if (hasFlags()) flag = hasSongs() ? pickFlag(flags, song.tier, flag) : randomOf(flags, flag);
   }
 
+  // para testes: ?flag=eu força essa bandeira (útil para verificar uma imagem em concreto)
+  const forced = new URLSearchParams(location.search).get("flag");
+  if (forced && hasFlags()) flag = ALL_FLAGS.find(f => f.code === forced) || flag;
   if (hasSongs()) renderSong();
   if (hasFlags()) renderFlag();
   if (inLevel()) startTimer();
@@ -409,6 +412,11 @@ function renderFlag() {
   const img = $("flag-img");
   img.classList.remove("loaded");
   img.onload = () => img.classList.add("loaded");
+  // A UE e a ONU vêm do flagcdn sem cabeçalho CORS: com crossorigin o browser recusa-as. Se falhar, tenta sem.
+  img.crossOrigin = "anonymous";
+  img.onerror = () => {
+    if (img.crossOrigin) { img.removeAttribute("crossorigin"); img.src = flagUrl(flag.code); }
+  };
   img.src = flagUrl(flag.code);
   $("flag-result").textContent = "";
   const typing = settings.flagMode === "typing";

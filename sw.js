@@ -4,7 +4,7 @@
 // - Bandeiras (flagcdn.com): cache-first; "precache-flags" guarda-as todas para jogar offline.
 // - YouTube e o resto: não são intercetados (o áudio precisa de internet).
 // Ao mudar ficheiros da app, aumentar VERSION para forçar renovação da cache.
-const VERSION = "2026-10-31.23";
+const VERSION = "2026-10-31.25";
 const APP = `flagles-app-${VERSION}`;
 const FLAGS = "flagles-flags-v1";
 
@@ -14,7 +14,7 @@ const SHELL = [
   "js/main.js", "js/player.js", "js/data.js", "js/text.js", "js/levels.js", "js/progress.js", "js/version.js", "js/audio.js", "js/spotify.js", "spotify-teste.html",
   "data/songs-tiered.json", "data/flags.json", "data/spotify-ids.json",
   "fonts/fraunces-latin.woff2", "fonts/instrument-sans-latin.woff2",
-  "icons/logo.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png", "icons/favicon-64.png",
+  "icons/logo.svg", "icons/beatles-heads.png", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png", "icons/favicon-64.png",
 ];
 
 self.addEventListener("install", e => {
@@ -40,7 +40,7 @@ self.addEventListener("fetch", e => {
         const hit = await cache.match(req);
         if (hit) return hit;
         const res = await fetch(req);
-        if (res.ok) cache.put(req, res.clone());
+        if (res.ok || res.type === "opaque") cache.put(req, res.clone()); // opaca: UE e ONU (sem CORS)
         return res;
       }),
     );
@@ -66,7 +66,10 @@ self.addEventListener("message", e => {
     caches.open(FLAGS).then(async cache => {
       for (const url of e.data.urls) {
         if (await cache.match(url)) continue;
-        try { const r = await fetch(url, { mode: "cors" }); if (r.ok) await cache.put(url, r); } catch (err) { /* sem rede: fica para a próxima */ }
+        try { const r = await fetch(url, { mode: "cors" }); if (r.ok) await cache.put(url, r); }
+        catch (err) { // sem CORS (UE, ONU): guarda a resposta opaca, que a imagem consegue usar
+          try { await cache.put(url, await fetch(url, { mode: "no-cors" })); } catch (e2) { /* sem rede: fica para a próxima */ }
+        }
       }
     }),
   );
