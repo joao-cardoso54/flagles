@@ -4,14 +4,14 @@
 // - Bandeiras (flagcdn.com): cache-first; "precache-flags" guarda-as todas para jogar offline.
 // - YouTube e o resto: não são intercetados (o áudio precisa de internet).
 // Ao mudar ficheiros da app, aumentar VERSION para forçar renovação da cache.
-const VERSION = "2026-10-31.6";
+const VERSION = "2026-10-31.8";
 const APP = `flagles-app-${VERSION}`;
 const FLAGS = "flagles-flags-v1";
 
 const SHELL = [
   "./", "index.html", "manifest.webmanifest",
   "css/style.css",
-  "js/main.js", "js/player.js", "js/data.js", "js/text.js", "js/levels.js", "js/progress.js", "js/version.js",
+  "js/main.js", "js/player.js", "js/data.js", "js/text.js", "js/levels.js", "js/progress.js", "js/version.js", "js/audio.js", "js/spotify.js", "spotify-teste.html",
   "data/songs-tiered.json", "data/flags.json",
   "fonts/fraunces-latin.woff2", "fonts/instrument-sans-latin.woff2",
   "icons/logo.svg", "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png", "icons/favicon-64.png",

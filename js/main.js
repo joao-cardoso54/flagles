@@ -1,5 +1,8 @@
 // Versões anteriores: js/_old/main-step5.js, main-step6.js e main-step7.js (antes do passo 8: PWA e redesenho).
-import { initPlayer, ready, playClip, stop } from "./player.js";
+// antes: import { initPlayer, ready, playClip, stop } from "./player.js";
+import { initPlayer, ready } from "./player.js";
+import { playSong, stopAll, prepare, setSource } from "./audio.js";
+import * as spotify from "./spotify.js";
 import {
   loadSongs, pickOptions, songLabel, songAnswers,
   loadFlags, flagUrl, pickFlag, pickFlagOptions, flagAnswers,
@@ -20,7 +23,7 @@ function show(name) {
 
 /* ------------------------------------------------------------------ definições */
 
-const DEFAULTS = { content: "both", songMode: "options", flagMode: "options", solo: true, territories: true, states: true };
+const DEFAULTS = { content: "both", songMode: "options", flagMode: "options", solo: true, territories: true, states: true, source: "auto" };
 const settings = { ...DEFAULTS };
 try { Object.assign(settings, JSON.parse(localStorage.getItem("flagles-settings") || "{}")); } catch (e) {}
 
@@ -40,6 +43,8 @@ function renderMenu() {
   $("opt-solo").checked = settings.solo;
   $("opt-terr").checked = settings.territories;
   $("opt-states").checked = settings.states;
+  $("opt-source").value = settings.source;
+  renderSpotify();
   // só mostra o que é relevante para o conteúdo escolhido
   $("row-song").hidden = content() === "flags";
   $("row-flag").hidden = content() === "songs";
@@ -67,6 +72,19 @@ bindSeg("mode-flag", "flagMode");
 $("opt-solo").addEventListener("change", e => { settings.solo = e.target.checked; saveSettings(); });
 $("opt-terr").addEventListener("change", e => { settings.territories = e.target.checked; saveSettings(); });
 $("opt-states").addEventListener("change", e => { settings.states = e.target.checked; saveSettings(); });
+$("opt-source").addEventListener("change", e => { settings.source = e.target.value; setSource(settings.source); saveSettings(); });
+
+// Ligação ao Spotify (opcional): estado e botão no menu.
+function renderSpotify() {
+  const on = spotify.isLoggedIn();
+  const err = spotify.lastError();
+  $("spotify-status").textContent = on ? "Spotify: ligado" : err ? `Spotify: ${err}` : "Spotify: não ligado";
+  $("spotify-login").textContent = on ? "Desligar" : "Ligar";
+  if (location.hostname === "localhost") $("spotify-status").textContent += " (para o Spotify, abre por 127.0.0.1 em vez de localhost)";
+}
+$("spotify-login").addEventListener("click", () => {
+  if (spotify.isLoggedIn()) { spotify.logout(); renderSpotify(); } else spotify.login("");
+});
 
 /* ------------------------------------------------------------------ estado do jogo */
 
@@ -177,7 +195,7 @@ function tick() {
 // Acabou o tempo: o que ficou por responder conta como erro (1 vida cada) e mostra-se a resposta certa.
 function timeUp() {
   stopTimer();
-  stop();
+  stopAll();
   if (!songDone) {
     songDone = true;
     reveal($("options"), null, false);
@@ -241,7 +259,7 @@ function newRound() {
 function afterAnswer() {
   if (inLevel() && run.lives === 0) {
     stopTimer();
-    stop();
+    stopAll();
     if (!songDone) { songDone = true; reveal($("options"), null, false); $("song-input").disabled = true; $("result").textContent = `Era: ${songLabel(song)}`; }
     if (!flagDone) { flagDone = true; reveal($("flag-options"), null, false); $("flag-input").disabled = true; $("flag-result").textContent = `Era: ${flag.name}`; }
     advanceBtn.disabled = true;
@@ -302,6 +320,7 @@ function reveal(box, picked, ok) {
 
 function renderSong() {
   step = 0;
+  prepare(song); // com Spotify ligado, procura a música enquanto o jogador responde
   $("result").textContent = "";
   renderSteps();
   const typing = settings.songMode === "typing";
@@ -348,8 +367,9 @@ async function listen() {
   statusEl.textContent = "A tocar…";
   $("q-song").classList.add("playing");
   try {
-    await playClip(song.videoId, LADDER[step]);
-    statusEl.textContent = "Fim do excerto";
+    // antes: await playClip(song.videoId, LADDER[step]);
+    const via = await playSong(song, LADDER[step]);
+    statusEl.textContent = via === "spotify" ? "Fim do excerto (Spotify)" : "Fim do excerto";
   } catch (err) {
     statusEl.textContent = err.message;
   } finally {
@@ -420,7 +440,7 @@ function renderLevels() {
 
 function showResult(win) {
   stopTimer();
-  stop();
+  stopAll();
   const n = run.level;
   let record = false;
   if (win) record = progress.complete(run.mode, n, run.score);
@@ -474,13 +494,17 @@ function askLeave() {
 
 /* ------------------------------------------------------------------ ligações */
 
+setSource(settings.source);
+// Se acabámos de voltar do login do Spotify, guarda o token (e, se veio da página de teste, volta para lá).
+spotify.handleRedirect().then(ret => { if (ret) location.href = ret; else renderMenu(); });
+
 initPlayer("yt");
 // Sem ligação o YouTube nunca carrega: ao fim de 8s passa a jogar-se só com bandeiras (e volta ao normal se carregar depois).
 const audioReady = Promise.race([ready().then(() => true), new Promise(r => setTimeout(() => r(false), 8000))]);
 // antes: Promise.all([ready(), loadSongs(), loadFlags()])
 Promise.all([audioReady, loadSongs(), loadFlags()])
   .then(([ok, s, f]) => {
-    audioOk = ok;
+    audioOk = ok || spotify.isLoggedIn(); // sem YouTube mas com Spotify ligado também há áudio
     ALL_SONGS = s;
     ALL_FLAGS = f;
     $("play-levels").disabled = false;
@@ -507,7 +531,7 @@ $("menu-btn").addEventListener("click", async () => {
   // antes: if (inLevel() && !confirm("Sair do nível? Perdes o progresso desta tentativa.")) return;
   if (inLevel() && !(await askLeave())) return;
   stopTimer();
-  stop();
+  stopAll();
   if (inLevel()) { renderLevels(); show("levels"); } else { renderMenu(); show("home"); }
 });
 

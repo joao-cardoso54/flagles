@@ -3,3 +3,13 @@ __pycache__/
 *.pyc
 .DS_Store
 .gstack/
+
+# áudio protegido: nunca vai para o GitHub
+*.mp3
+*.m4a
+*.flac
+*.wav
+*.mp3:Zone.Identifier
+*:Zone.Identifier
+audio/
+clips/

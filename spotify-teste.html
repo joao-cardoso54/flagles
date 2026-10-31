@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Teste do Spotify - The Flagles</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .t-log { font: 13px/1.5 ui-monospace, Menlo, monospace; white-space: pre-wrap; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 12px; min-height: 120px; }
+    .t-row { display: flex; gap: 10px; align-items: center; }
+    .t-row > * { flex: 1; }
+    select, input[type=number] { font: inherit; font-size: 16px; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); width: 100%; }
+    label { font-size: 13px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <section class="screen" style="animation:none">
+      <header class="bar"><a class="link" href="./">&#8249; Voltar à app</a></header>
+      <h2 class="title">Teste do Spotify</h2>
+      <p class="hint" id="status" style="text-align:left"></p>
+      <button id="login" class="btn primary">Ligar ao Spotify</button>
+
+      <div id="tools" hidden style="display:flex;flex-direction:column;gap:12px">
+        <div><label for="song">Música</label><select id="song"></select></div>
+        <button id="search" class="btn">Procurar no Spotify</button>
+        <div class="t-row">
+          <div><label for="secs">Tocar (segundos)</label>
+            <select id="secs"><option>1</option><option>2</option><option>3</option><option>5</option><option>8</option><option>15</option></select></div>
+          <div><label for="offset">Ajuste manual (ms)</label><input id="offset" type="number" step="50"></div>
+        </div>
+        <button id="play" class="btn primary big">Tocar</button>
+        <div class="t-row">
+          <button id="reset" class="btn small-btn">Repor correção</button>
+          <button id="clear" class="btn small-btn">Limpar pesquisas</button>
+        </div>
+      </div>
+      <div class="t-log" id="log">Liga ao Spotify, escolhe uma música, carrega em "Procurar" e depois em "Tocar".
+Antes: abre a app do Spotify no telemóvel e toca numa música (podes pausar).
+
+"Tocou" é a posição em que o Spotify parou, medida logo a seguir. Quanto mais perto do pedido, melhor.
+A app corrige sozinha o atraso a cada tentativa: repete 4 ou 5 vezes a mesma duração.</div>
+    </section>
+  </main>
+  <script type="module">
+    import * as sp from "./js/spotify.js";
+    const $ = id => document.getElementById(id);
+    const log = (...a) => { $("log").textContent = a.join("\n") + "\n\n" + $("log").textContent; };
+
+    const back = await sp.handleRedirect();          // regresso do login
+    const on = sp.isLoggedIn();
+    $("status").textContent = on ? "Ligado ao Spotify." : (sp.lastError() ? "Erro: " + sp.lastError() : "Ainda não ligado.");
+    if (location.hostname === "localhost") $("status").textContent += " Abre por 127.0.0.1 em vez de localhost.";
+    $("login").textContent = on ? "Desligar" : "Ligar ao Spotify";
+    $("login").onclick = () => { if (on) { sp.logout(); location.reload(); } else sp.login("spotify-teste.html"); };
+    $("tools").hidden = !on;
+    $("tools").style.display = on ? "flex" : "none";
+
+    const songs = (await (await fetch("data/songs-tiered.json")).json()).filter(s => !s.excluded);
+    $("song").innerHTML = songs.map((s, i) => `<option value="${i}">${s.title}${s.artist ? " (" + s.artist + ")" : ""}</option>`).join("");
+    $("offset").value = sp.getOffset();
+    const cur = () => songs[$("song").value];
+
+    $("search").onclick = async () => {
+      try { const f = await sp.findTrack(cur()); log(f ? "Encontrada: " + f.label : "Não encontrada no Spotify."); }
+      catch (e) { log("Erro: " + e.message); }
+    };
+    $("play").onclick = async () => {
+      sp.setOffset($("offset").value);
+      $("play").disabled = true;
+      const secs = Number($("secs").value);
+      try {
+        const r = await sp.playClip(cur(), secs);
+        await new Promise(res => setTimeout(res, 1200)); // dá tempo à medição em segundo plano
+        const m = sp.lastMeasurement();
+        log(`Pedido ${r.requestedMs} ms | RTT do comando ${Math.round(r.rtt)} ms | correção usada ${Math.round(r.bias)} ms`
+          + (m ? `\nTocou ${m.playedMs} ms (erro ${m.error > 0 ? "+" : ""}${m.error} ms) | nova correção ${sp.getBias()} ms` : "\n(sem medição)"));
+      } catch (e) { log("Erro: " + e.message); }
+      $("play").disabled = false;
+    };
+    $("reset").onclick = () => { sp.resetBias(); log("Correção automática reposta a 0."); };
+    $("clear").onclick = () => { sp.clearTrackCache(); log("Pesquisas guardadas apagadas."); };
+  </script>
+</body>
+</html>

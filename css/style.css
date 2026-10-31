@@ -120,14 +120,15 @@ button { touch-action: manipulation; -webkit-user-select: none; user-select: non
 
 /* ------------------------------------------------------------------ barra do jogo */
 .bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-.bar.sticky { position: sticky; top: 0; z-index: 5; padding: 8px 0; margin: -8px 0 0; background: var(--bg); }
+/* antes: .bar.sticky { position: sticky; top: 0; z-index: 5; padding: 8px 0; margin: -8px 0 0; background: var(--bg); } */
+.sticky-top { position: sticky; top: 0; z-index: 5; margin: -8px 0 0; padding: 8px 0 8px; background: var(--bg); }
 .hud { flex: 1; display: flex; align-items: center; justify-content: space-between; font-weight: 600; font-size: 15px; }
 .lives { display: flex; gap: 3px; font-size: 22px; line-height: 1; }
 .heart { color: var(--bad); display: inline-block; transition: color 0.3s; }
 .heart.lost { color: var(--line); animation: heart-pop 0.45s ease-out; }
 @keyframes heart-pop { 0% { transform: scale(1.5); color: var(--bad); } 100% { transform: scale(1); } }
 
-.timer { display: flex; align-items: center; gap: 10px; margin-top: -4px; }
+.timer { display: flex; align-items: center; gap: 10px; margin-top: 2px; }
 .track { position: relative; flex: 1; height: 12px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 9%, transparent); overflow: hidden; }
 #timer-bar { position: absolute; inset: 0 auto 0 0; width: 100%; background: var(--accent); border-radius: 999px; transition: width 0.12s linear, background 0.3s; }
 #timer-bar.low { background: var(--bad); animation: pulse 0.9s ease-in-out infinite; }
@@ -222,3 +223,10 @@ dialog p { margin: 0 0 18px; font: 600 20px/1.25 var(--display); }
 .mode-tag { display: inline-block; vertical-align: middle; margin-left: 8px; padding: 4px 10px; border-radius: 999px; font: 600 13px/1 var(--body); letter-spacing: 0.04em; color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
 /* a etiqueta do modo fica por baixo do título (pode ser comprida: "Os dois · música Escrever, bandeira Opções") */
 .title .mode-tag { display: table; margin: 8px 0 0; line-height: 1.3; }
+
+/* ---- fonte do áudio e Spotify (menu) ---- */
+.source-row, .spotify-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; font-size: 15px; }
+.source-row select { font: inherit; font-size: 15px; padding: 9px 10px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); }
+.spotify-row .btn { width: auto; flex: none; }
+.spotify-row span { color: var(--muted); line-height: 1.3; }
+.textlink { display: inline-block; margin-top: 12px; font-size: 14px; color: var(--accent); }

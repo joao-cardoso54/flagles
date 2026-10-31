@@ -62,6 +62,19 @@
           <label class="check" id="row-solo"><input type="checkbox" id="opt-solo"> Incluir carreiras a solo (Lennon, McCartney, Harrison, Ringo)</label>
           <label class="check" id="row-terr"><input type="checkbox" id="opt-terr"> Incluir territórios (Anguila, Guam, ...) e UE, ONU, Antártida</label>
           <label class="check" id="row-states"><input type="checkbox" id="opt-states"> Incluir estados dos EUA</label>
+          <div class="source-row" id="row-source">
+            <label for="opt-source">Fonte do áudio</label>
+            <select id="opt-source">
+              <option value="auto">Automático</option>
+              <option value="youtube">Só YouTube</option>
+              <option value="spotify">Só Spotify</option>
+            </select>
+          </div>
+          <div class="spotify-row">
+            <span id="spotify-status">Spotify: não ligado</span>
+            <button type="button" id="spotify-login" class="btn small-btn">Ligar</button>
+          </div>
+          <a class="textlink" href="spotify-teste.html">Teste de precisão do Spotify</a>
         </details>
       </div>
 
@@ -103,15 +116,18 @@
 
     <!-- Jogo -->
     <section id="game" class="screen" hidden>
-      <header class="bar sticky">
-        <button id="menu-btn" class="link" type="button">&#8249; Menu</button>
-        <div class="hud" id="hud" hidden>
-          <span id="hud-level"></span>
-          <span class="lives" id="lives" aria-label="Vidas"></span>
-        </div>
-        <span class="label" id="score">Certas: 0 / 0</span>
-      </header>
-      <div class="timer" id="timer" hidden><div class="track"><div id="timer-bar"></div></div><span id="timer-text"></span></div>
+      <!-- topo fixo: barra + relógio ficam sempre visíveis ao fazer scroll -->
+      <div class="sticky-top">
+        <header class="bar">
+          <button id="menu-btn" class="link" type="button">&#8249; Menu</button>
+          <div class="hud" id="hud" hidden>
+            <span id="hud-level"></span>
+            <span class="lives" id="lives" aria-label="Vidas"></span>
+          </div>
+          <span class="label" id="score">Certas: 0 / 0</span>
+        </header>
+        <div class="timer" id="timer" hidden><div class="track"><div id="timer-bar"></div></div><span id="timer-text"></span></div>
+      </div>
 
       <div class="q card q-song" id="q-song">
         <div class="audio">
