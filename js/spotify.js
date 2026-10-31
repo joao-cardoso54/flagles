@@ -184,6 +184,7 @@ async function startPlayback(uri) {
   if (r.status === 404) throw new Error(NO_DEVICE);
   if (r.status === 429) throw new Error("O Spotify pediu para esperar um pouco; tenta já a seguir.");
   if (r.status >= 400) throw new Error(`Spotify ${r.status}${r.json?.error?.message ? ": " + r.json.error.message : ""}`);
+  return r;
 }
 
 let lastClip = null; // para o stop()
@@ -233,13 +234,16 @@ export async function diagnose(song) {
   if (!found) throw new Error("Esta música não foi encontrada no Spotify.");
   const lines = [`Faixa: ${found.label}`];
   const t0 = performance.now();
-  await startPlayback(found.uri);
-  lines.push(`Comando de tocar aceite em ${Math.round(performance.now() - t0)} ms`);
+  const pr = await startPlayback(found.uri);
+  lines.push(`Comando de tocar: HTTP ${pr.status} em ${Math.round(performance.now() - t0)} ms${pr.json ? " | " + JSON.stringify(pr.json).slice(0, 200) : ""}`);
+  const dv = await api("GET", "/me/player/devices");
+  lines.push("Dispositivos (bruto): " + JSON.stringify(dv.json?.devices || dv.json).slice(0, 500));
   for (let i = 1; i <= 8; i++) {
     await sleep(600);
     const r = await api("GET", "/me/player");
     const j = r.json;
-    lines.push(`+${Math.round(performance.now() - t0)} ms: ${r.status === 204 || !j ? "sem estado (nada ativo)" :
+    if (i === 1 && j) lines.push("Estado (bruto): " + JSON.stringify({ ...j, item: j.item ? { name: j.item.name, uri: j.item.uri, is_playable: j.item.is_playable } : null }).slice(0, 900));
+    lines.push(`+${Math.round(performance.now() - t0)} ms: HTTP ${r.status} ${r.status === 204 || !j ? "sem estado (nada ativo)" :
       `a tocar=${j.is_playing} | posição=${j.progress_ms} ms | volume=${j.device?.volume_percent ?? "?"}% | ${j.device?.name} | faixa=${j.item?.name ?? "?"}`}`);
   }
   await api("PUT", "/me/player/pause");
