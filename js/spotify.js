@@ -1,7 +1,7 @@
 // Ligação ao Spotify: login (OAuth com PKCE, sem servidor), pesquisa da música e controlo remoto da app do Spotify.
 // A app NÃO recebe áudio do Spotify: manda a app do Spotify tocar a partir do início e parar ao fim de X segundos.
 // Requer Spotify Premium e a app do Spotify aberta no aparelho.
-import { normalize } from "./text.js";
+import { normalize, distance } from "./text.js";
 
 // Público (não é segredo). Criado em developer.spotify.com/dashboard.
 const CLIENT_ID = "896f832f2f4c4f3eafb78184d2ef800b";
@@ -125,7 +125,9 @@ export function pickBest(items, song) {
   let best = null;
   for (const t of items || []) {
     const name = t.name || "";
-    if (BASE(name) !== want) continue;
+    const nb = BASE(name);
+    const tol = want.length >= 25 ? 3 : 0; // só em títulos longos: "Revolution" nunca pode virar "Revolution 9"
+    if (nb !== want && !(tol && distance(nb, want) <= tol)) continue;
     if (!wantsSpecial && (BAD.test(name) || BAD_ALBUM.test(t.album?.name || ""))) continue;
     // variantes pedidas explicitamente nos parênteses do título (ex.: "(Reprise)", "(Ballad)")
     // ("Reprise" e "Play Out" têm de aparecer no nome; "Ballad" é a versão normal, sem etiqueta)
@@ -133,7 +135,7 @@ export function pickBest(items, song) {
     const lname = name.toLowerCase();
     if ((marker === "reprise" || marker === "play out") && !lname.includes(marker)) continue;
     if (marker !== "reprise" && marker !== "play out" && /\b(reprise|play out)\b/.test(lname) && !/\b(reprise|play out)\b/i.test(song.title)) continue;
-    let score = 0;
+    let score = nb === want ? 10 : 0; // prefere sempre o título exato
     if (t.artists?.some(a => normalize(a.name).includes(artist) || artist.includes(normalize(a.name)))) score += 5;
     if (t.album?.album_type === "album") score += 2;
     if (/\b(greatest|hits|collection|anthology|essential|best of|1962|1967|1970|1\b)/i.test(t.album?.name || "")) score -= 2;
@@ -143,8 +145,18 @@ export function pickBest(items, song) {
   return best && best.t;
 }
 
+// Mapeamento já verificado (data/spotify-ids.json), igual para todos os aparelhos; evita pesquisar.
+let staticIds = null;
+async function loadStaticIds() {
+  if (staticIds) return staticIds;
+  try { const r = await fetch("data/spotify-ids.json"); staticIds = r.ok ? await r.json() : {}; } catch (e) { staticIds = {}; }
+  return staticIds;
+}
+
 // Devolve { uri, label } da música no Spotify (com cache), ou null se não encontrar.
 export async function findTrack(song) {
+  const fixed = (await loadStaticIds())[song.videoId];
+  if (fixed?.album) return fixed;
   const cache = read(LS.ids, {});
   if (cache[song.videoId]?.album) return cache[song.videoId]; // entradas antigas (sem álbum) refazem-se
   const title = song.title.replace(/\(.*?\)/g, " ").replace(/\s+/g, " ").trim();
@@ -285,6 +297,7 @@ export const getOffset = () => Number(read(LS.offset, 0)) || 0;
 export const setOffset = ms => write(LS.offset, Number(ms) || 0);
 export const getBias = () => Number(read(LS.bias, 0)) || 0;
 export const resetBias = () => write(LS.bias, 0);
+export const savedTracks = () => read(LS.ids, {});
 export const clearTrackCache = () => { try { localStorage.removeItem(LS.ids); } catch (e) {} };
 
 // Resolve a música no Spotify sem tocar (para o jogo pré-carregar enquanto o jogador responde).

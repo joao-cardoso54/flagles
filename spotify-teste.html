@@ -30,8 +30,10 @@
           <div><label for="offset">Ajuste manual (ms)</label><input id="offset" type="number" step="50"></div>
         </div>
         <button id="play" class="btn primary big">Tocar</button>
+        <button id="save" class="btn small-btn" hidden>Descarregar mapeamento (spotify-ids.json)</button>
         <div class="t-row">
           <button id="diag" class="btn small-btn">Diagnóstico (12s)</button>
+          <button id="all" class="btn small-btn">Verificar todas as músicas</button>
           <button id="devs" class="btn small-btn">Ver dispositivos</button>
           <button id="reset" class="btn small-btn">Repor correção</button>
           <button id="clear" class="btn small-btn">Limpar pesquisas</button>
@@ -84,6 +86,34 @@ A app corrige sozinha o atraso a cada tentativa: repete 4 ou 5 vezes a mesma dur
       $("diag").disabled = true; log("A diagnosticar... (uns 12 segundos)");
       try { log((await sp.diagnose(cur())).join("\n")); } catch (e) { log("Erro: " + e.message); }
       $("diag").disabled = false;
+    };
+    // Verifica as 276 músicas: procura cada uma no Spotify e lista as que não encontra e as duvidosas.
+    $("all").onclick = async () => {
+      $("all").disabled = true;
+      const missing = [], doubtful = [];
+      for (let i = 0; i < songs.length; i++) {
+        const s = songs[i];
+        $("status").textContent = `A verificar ${i + 1} / ${songs.length}: ${s.title}`;
+        let f = null;
+        for (let tries = 0; tries < 4; tries++) {
+          try { f = await sp.findTrack(s); break; }
+          catch (e) { if (/esperar/.test(e.message)) await new Promise(r => setTimeout(r, 6000)); else { f = null; missing.push(`${s.title} [erro: ${e.message}]`); break; } }
+        }
+        if (!f) { if (!missing.some(m => m.startsWith(s.title))) missing.push(s.title + (s.artist ? " (" + s.artist + ")" : "")); }
+        else if (/\b(live|greatest|hits|collection|anthology|essential|best of|tribute|karaoke|demos?)\b/i.test(f.label.split("·").pop() || "")) doubtful.push(`${s.title} -> ${f.label}`);
+        await new Promise(r => setTimeout(r, 180)); // não exceder os limites do Spotify
+      }
+      $("status").textContent = "Verificação terminada.";
+      log(`Verificadas ${songs.length}. Encontradas ${songs.length - missing.length}. Em falta ${missing.length}. Duvidosas ${doubtful.length}.`
+        + (missing.length ? "\n\nNÃO ENCONTRADAS:\n- " + missing.join("\n- ") : "")
+        + (doubtful.length ? "\n\nDUVIDOSAS (álbum estranho):\n- " + doubtful.join("\n- ") : ""));
+      $("all").disabled = false;
+      $("save").hidden = false;
+    };
+    // Guarda o resultado num ficheiro para pôr em data/spotify-ids.json (assim todos os aparelhos usam o mesmo).
+    $("save").onclick = () => {
+      const blob = new Blob([JSON.stringify(sp.savedTracks(), null, 1)], { type: "application/json" });
+      const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "spotify-ids.json"; a.click();
     };
     $("devs").onclick = async () => {
       try { const d = await sp.devices(); log(d.length ? "Dispositivos:\n- " + d.join("\n- ") : "Nenhum dispositivo Spotify encontrado. Abre a app do Spotify (PC ou telemóvel) e toca numa música."); }
