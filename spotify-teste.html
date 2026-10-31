@@ -31,6 +31,7 @@
         </div>
         <button id="play" class="btn primary big">Tocar</button>
         <div class="t-row">
+          <button id="devs" class="btn small-btn">Ver dispositivos</button>
           <button id="reset" class="btn small-btn">Repor correção</button>
           <button id="clear" class="btn small-btn">Limpar pesquisas</button>
         </div>
@@ -74,9 +75,13 @@ A app corrige sozinha o atraso a cada tentativa: repete 4 ou 5 vezes a mesma dur
         await new Promise(res => setTimeout(res, 1200)); // dá tempo à medição em segundo plano
         const m = sp.lastMeasurement();
         log(`Pedido ${r.requestedMs} ms | RTT do comando ${Math.round(r.rtt)} ms | correção usada ${Math.round(r.bias)} ms`
-          + (m ? `\nTocou ${m.playedMs} ms (erro ${m.error > 0 ? "+" : ""}${m.error} ms) | nova correção ${sp.getBias()} ms` : "\n(sem medição)"));
+          + (m ? `\nTocou ${m.playedMs} ms (erro ${m.error > 0 ? "+" : ""}${m.error} ms) | nova correção ${sp.getBias()} ms\nDispositivo: ${m.device}` : "\n(sem medição)"));
       } catch (e) { log("Erro: " + e.message); }
       $("play").disabled = false;
+    };
+    $("devs").onclick = async () => {
+      try { const d = await sp.devices(); log(d.length ? "Dispositivos:\n- " + d.join("\n- ") : "Nenhum dispositivo Spotify encontrado. Abre a app do Spotify (PC ou telemóvel) e toca numa música."); }
+      catch (e) { log("Erro: " + e.message); }
     };
     $("reset").onclick = () => { sp.resetBias(); log("Correção automática reposta a 0."); };
     $("clear").onclick = () => { sp.clearTrackCache(); log("Pesquisas guardadas apagadas."); };

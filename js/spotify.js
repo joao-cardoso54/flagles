@@ -220,11 +220,18 @@ async function measure(requestedMs, bias) {
   const played = r.json?.progress_ms;
   if (typeof played !== "number") return;
   const error = played - requestedMs; // >0: tocou a mais; <0: tocou a menos
-  lastMeasure = { requestedMs, playedMs: played, error };
+  lastMeasure = { requestedMs, playedMs: played, error, device: r.json?.device?.name || "?", playing: !!r.json?.is_playing };
   const next = Math.max(-1000, Math.min(2000, bias + error * 0.6));
   write(LS.bias, Math.round(next));
 }
 export const lastMeasurement = () => lastMeasure;
+
+// Dispositivos Spotify disponíveis (a música sai do que estiver ativo, não necessariamente deste aparelho).
+export async function devices() {
+  const r = await api("GET", "/me/player/devices");
+  if (r.status >= 400) throw new Error(`Spotify ${r.status}${r.json?.error?.message ? ": " + r.json.error.message : ""}`);
+  return (r.json?.devices || []).map(d => `${d.name} (${d.type})${d.is_active ? " [ativo]" : ""}`);
+}
 
 export async function stop() {
   if (lastClip) lastClip.cancelled = true;
