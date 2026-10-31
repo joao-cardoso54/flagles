@@ -146,7 +146,7 @@ export function pickBest(items, song) {
 // Devolve { uri, label } da música no Spotify (com cache), ou null se não encontrar.
 export async function findTrack(song) {
   const cache = read(LS.ids, {});
-  if (cache[song.videoId]) return cache[song.videoId];
+  if (cache[song.videoId]?.album) return cache[song.videoId]; // entradas antigas (sem álbum) refazem-se
   const title = song.title.replace(/\(.*?\)/g, " ").replace(/\s+/g, " ").trim();
   const artist = artistOf(song);
   const queries = [`track:"${title}" artist:"${artist}"`, `${title} ${artist}`];
@@ -157,7 +157,7 @@ export async function findTrack(song) {
     if (r.status >= 400) throw new Error(`Pesquisa no Spotify falhou (${r.status})${r.json?.error?.message ? ": " + r.json.error.message : ""}`);
     const t = pickBest(r.json?.tracks?.items, song);
     if (t) {
-      const found = { uri: t.uri, label: `${t.name} · ${t.artists.map(a => a.name).join(", ")} · ${t.album.name}` };
+      const found = { uri: t.uri, album: t.album?.uri, label: `${t.name} · ${t.artists.map(a => a.name).join(", ")} · ${t.album.name}` };
       write(LS.ids, { ...read(LS.ids, {}), [song.videoId]: found });
       return found;
     }
@@ -228,25 +228,38 @@ async function measure(requestedMs, bias) {
 }
 export const lastMeasurement = () => lastMeasure;
 
-// Diagnóstico: toca ~5s e mostra, de meio em meio segundo, o que o Spotify diz (a avançar? volume? que faixa?).
+// Diagnóstico: tenta várias formas de mandar tocar e diz qual funciona (o Spotify aceita o comando mas pode não arrancar).
 export async function diagnose(song) {
   const found = await findTrack(song);
   if (!found) throw new Error("Esta música não foi encontrada no Spotify.");
-  const lines = [`Faixa: ${found.label}`];
-  const t0 = performance.now();
-  const pr = await startPlayback(found.uri);
-  lines.push(`Comando de tocar: HTTP ${pr.status} em ${Math.round(performance.now() - t0)} ms${pr.json ? " | " + JSON.stringify(pr.json).slice(0, 200) : ""}`);
+  const lines = [`Faixa: ${found.label}`, `URI: ${found.uri} | álbum: ${found.album}`];
+  const id = found.uri.split(":").pop();
+  const tr = await api("GET", `/tracks/${id}?market=PT`);
+  lines.push(`Faixa no Spotify: HTTP ${tr.status} | is_playable=${tr.json?.is_playable} | restrições=${JSON.stringify(tr.json?.restrictions ?? null)}`);
   const dv = await api("GET", "/me/player/devices");
-  lines.push("Dispositivos (bruto): " + JSON.stringify(dv.json?.devices || dv.json).slice(0, 500));
-  for (let i = 1; i <= 8; i++) {
-    await sleep(600);
-    const r = await api("GET", "/me/player");
-    const j = r.json;
-    if (i === 1 && j) lines.push("Estado (bruto): " + JSON.stringify({ ...j, item: j.item ? { name: j.item.name, uri: j.item.uri, is_playable: j.item.is_playable } : null }).slice(0, 900));
-    lines.push(`+${Math.round(performance.now() - t0)} ms: HTTP ${r.status} ${r.status === 204 || !j ? "sem estado (nada ativo)" :
-      `a tocar=${j.is_playing} | posição=${j.progress_ms} ms | volume=${j.device?.volume_percent ?? "?"}% | ${j.device?.name} | faixa=${j.item?.name ?? "?"}`}`);
+  const dev = (dv.json?.devices || []).find(d => d.is_active) || (dv.json?.devices || [])[0];
+  if (!dev) { lines.push("Sem dispositivos Spotify."); return lines; }
+  lines.push(`Dispositivo: ${dev.name} (${dev.type}) volume ${dev.volume_percent}%`);
+
+  const attempts = [
+    ["A) uris, sem posição", () => api("PUT", "/me/player/play", { uris: [found.uri] })],
+    ["B) uris, posição 0", () => api("PUT", "/me/player/play", { uris: [found.uri], position_ms: 0 })],
+    ["C) álbum + faixa", () => api("PUT", "/me/player/play", { context_uri: found.album, offset: { uri: found.uri } })],
+    ["D) transferir para o dispositivo e tocar", async () => {
+      await api("PUT", "/me/player", { device_ids: [dev.id], play: true });
+      await sleep(800);
+      return api("PUT", `/me/player/play?device_id=${dev.id}`, { uris: [found.uri] });
+    }],
+  ];
+  for (const [label, run] of attempts) {
+    const r = await run();
+    await sleep(1800);
+    const st = await api("GET", "/me/player");
+    const j = st.json;
+    lines.push(`${label}: comando HTTP ${r.status}${r.json?.error?.message ? " (" + r.json.error.message + ")" : ""} -> a tocar=${j?.is_playing} | posição=${j?.progress_ms} ms | faixa=${j?.item?.name ?? "nenhuma"}`);
+    await api("PUT", "/me/player/pause");
+    await sleep(400);
   }
-  await api("PUT", "/me/player/pause");
   return lines;
 }
 
