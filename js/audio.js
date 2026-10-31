@@ -1,36 +1,16 @@
-// Escolhe de onde vem o áudio de cada música: Spotify (se ligado) ou YouTube.
-// "auto": Spotify quando está ligado e a música é encontrada; se falhar, YouTube.
-import * as yt from "./player.js";
+// O áudio vem sempre do Spotify (controlo remoto da app do Spotify; precisa de Premium).
+// Versão anterior, com YouTube como alternativa: js/_old/audio-youtube.js
 import * as sp from "./spotify.js";
 
-let source = "auto"; // "auto" | "youtube" | "spotify"
-let via = null;       // quem está a tocar agora
-
-export const setSource = s => { source = s; };
-export const spotifyOn = () => sp.isLoggedIn() && source !== "youtube";
+export const audioAvailable = () => sp.isLoggedIn();
 
 // Pré-carrega (pesquisa no Spotify) enquanto o jogador ainda está a responder à ronda anterior.
-export function prepare(song) { if (spotifyOn()) sp.prepare(song); }
+export function prepare(song) { if (sp.isLoggedIn()) sp.prepare(song); }
 
-// Toca `seconds` segundos do início. Resolve com "spotify" ou "youtube" (quem tocou).
+// Toca `seconds` segundos do início. Se falhar, o erro (com o motivo) chega ao jogador.
 export async function playSong(song, seconds) {
-  if (spotifyOn()) {
-    try {
-      via = "spotify";
-      await sp.playClip(song, seconds);
-      return "spotify";
-    } catch (err) {
-      if (source === "spotify") throw err; // "só Spotify": mostra o erro
-      // automático: cai para o YouTube
-    }
-  }
-  via = "youtube";
-  await yt.playClip(song.videoId, seconds);
-  return "youtube";
+  await sp.playClip(song, seconds);
+  return "spotify";
 }
 
-export function stopAll() {
-  yt.stop();
-  if (via === "spotify") sp.stop();
-  via = null;
-}
+export function stopAll() { sp.stop(); }

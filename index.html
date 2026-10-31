@@ -57,23 +57,17 @@
           </div>
         </div>
 
+        <!-- o áudio é sempre do Spotify: o estado e o botão ficam à vista -->
+        <div class="spotify-row" id="row-spotify">
+          <span id="spotify-status">Spotify: não ligado</span>
+          <button type="button" id="spotify-login" class="btn small-btn">Ligar</button>
+        </div>
+
         <details class="more">
           <summary>Mais opções</summary>
           <label class="check" id="row-solo"><input type="checkbox" id="opt-solo"> Incluir carreiras a solo (Lennon, McCartney, Harrison, Ringo)</label>
           <label class="check" id="row-terr"><input type="checkbox" id="opt-terr"> Incluir territórios (Anguila, Guam, ...) e UE, ONU, Antártida</label>
           <label class="check" id="row-states"><input type="checkbox" id="opt-states"> Incluir estados dos EUA</label>
-          <div class="source-row" id="row-source">
-            <label for="opt-source">Fonte do áudio</label>
-            <select id="opt-source">
-              <option value="auto">Automático</option>
-              <option value="youtube">Só YouTube</option>
-              <option value="spotify">Só Spotify</option>
-            </select>
-          </div>
-          <div class="spotify-row">
-            <span id="spotify-status">Spotify: não ligado</span>
-            <button type="button" id="spotify-login" class="btn small-btn">Ligar</button>
-          </div>
           <a class="textlink" href="spotify-teste.html">Teste de precisão do Spotify</a>
         </details>
       </div>
@@ -169,8 +163,7 @@
     </form>
   </dialog>
 
-  <!-- Player do YouTube: quase invisível, mas presente (alguns browsers não tocam se estiver display:none) -->
-  <div class="yt-host"><div id="yt"></div></div>
+  <!-- antes: player do YouTube escondido (<div class="yt-host"><div id="yt"></div></div>). Já não é preciso: o áudio vem do Spotify. -->
 
   <script type="module" src="js/main.js"></script>
 </body>

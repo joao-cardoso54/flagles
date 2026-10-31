@@ -1,7 +1,6 @@
 // Versões anteriores: js/_old/main-step5.js, main-step6.js e main-step7.js (antes do passo 8: PWA e redesenho).
-// antes: import { initPlayer, ready, playClip, stop } from "./player.js";
-import { initPlayer, ready } from "./player.js";
-import { playSong, stopAll, prepare, setSource } from "./audio.js";
+// antes (com YouTube): import { initPlayer, ready } from "./player.js"; e setSource() — ver js/_old/main-step8-youtube.js
+import { playSong, stopAll, prepare } from "./audio.js";
 import * as spotify from "./spotify.js";
 import {
   loadSongs, pickOptions, songLabel, songAnswers,
@@ -43,7 +42,6 @@ function renderMenu() {
   $("opt-solo").checked = settings.solo;
   $("opt-terr").checked = settings.territories;
   $("opt-states").checked = settings.states;
-  $("opt-source").value = settings.source;
   renderSpotify();
   // só mostra o que é relevante para o conteúdo escolhido
   $("row-song").hidden = content() === "flags";
@@ -51,8 +49,9 @@ function renderMenu() {
   $("row-solo").hidden = content() === "flags";
   $("row-terr").hidden = content() === "songs";
   $("row-states").hidden = content() === "songs";
-  $("offline-note").hidden = audioOk;
-  if (!audioOk) $("offline-note").textContent = "Sem ligação ao YouTube: o áudio não está disponível, por isso só podes jogar com bandeiras.";
+  // sem Spotify ligado não há músicas: só bandeiras, até ligares
+  $("offline-note").hidden = audioOk();
+  if (!audioOk()) $("offline-note").textContent = "Liga o Spotify (Premium) para jogar com músicas. Por agora só há bandeiras.";
   // o recorde mostrado é o do tipo de jogo escolhido (cada um tem o seu progresso)
   const done = progress.highestCompleted(modeKey());
   $("record").textContent = done ? `${modeLabel()}: nível mais alto ${done} · ${progress.totalBest(modeKey())} pontos` : "";
@@ -72,7 +71,6 @@ bindSeg("mode-flag", "flagMode");
 $("opt-solo").addEventListener("change", e => { settings.solo = e.target.checked; saveSettings(); });
 $("opt-terr").addEventListener("change", e => { settings.territories = e.target.checked; saveSettings(); });
 $("opt-states").addEventListener("change", e => { settings.states = e.target.checked; saveSettings(); });
-$("opt-source").addEventListener("change", e => { settings.source = e.target.value; setSource(settings.source); saveSettings(); });
 
 // Ligação ao Spotify (opcional): estado e botão no menu.
 function renderSpotify() {
@@ -83,7 +81,7 @@ function renderSpotify() {
   if (location.hostname === "localhost") $("spotify-status").textContent += " (para o Spotify, abre por 127.0.0.1 em vez de localhost)";
 }
 $("spotify-login").addEventListener("click", () => {
-  if (spotify.isLoggedIn()) { spotify.logout(); renderSpotify(); } else spotify.login("");
+  if (spotify.isLoggedIn()) { spotify.logout(); renderMenu(); } else spotify.login("");
 });
 
 /* ------------------------------------------------------------------ estado do jogo */
@@ -99,8 +97,8 @@ let run = null;                      // { level, round, rounds, lives, score, us
 let right = 0, total = 0;            // contador do treino
 let timerId = null, deadline = 0;
 
-let audioOk = true; // false se o YouTube não carregar (sem ligação): joga-se só com bandeiras
-const content = () => (audioOk ? settings.content : "flags");
+const audioOk = () => spotify.isLoggedIn(); // as músicas precisam do Spotify ligado
+const content = () => (audioOk() ? settings.content : "flags");
 // Cada combinação de conteúdo + forma de responder tem o seu próprio progresso e os seus pontos.
 const ANSWER = { options: "Opções", typing: "Escrever" };
 function modeKey() {
@@ -494,17 +492,12 @@ function askLeave() {
 
 /* ------------------------------------------------------------------ ligações */
 
-setSource(settings.source);
 // Se acabámos de voltar do login do Spotify, guarda o token (e, se veio da página de teste, volta para lá).
 spotify.handleRedirect().then(ret => { if (ret) location.href = ret; else renderMenu(); });
 
-initPlayer("yt");
-// Sem ligação o YouTube nunca carrega: ao fim de 8s passa a jogar-se só com bandeiras (e volta ao normal se carregar depois).
-const audioReady = Promise.race([ready().then(() => true), new Promise(r => setTimeout(() => r(false), 8000))]);
-// antes: Promise.all([ready(), loadSongs(), loadFlags()])
-Promise.all([audioReady, loadSongs(), loadFlags()])
-  .then(([ok, s, f]) => {
-    audioOk = ok || spotify.isLoggedIn(); // sem YouTube mas com Spotify ligado também há áudio
+// antes: initPlayer("yt") e esperar pelo YouTube
+Promise.all([loadSongs(), loadFlags()])
+  .then(([s, f]) => {
     ALL_SONGS = s;
     ALL_FLAGS = f;
     $("play-levels").disabled = false;
@@ -512,7 +505,6 @@ Promise.all([audioReady, loadSongs(), loadFlags()])
     $("play").disabled = false;
     renderMenu();
     precacheFlags(f);
-    if (!ok) ready().then(() => { audioOk = true; renderMenu(); });
   })
   .catch(err => { $("play-levels").textContent = err.message; });
 
