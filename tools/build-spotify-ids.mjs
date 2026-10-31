@@ -29,15 +29,18 @@ const tracks = rows.filter(r => r[col("Track URI")]).map(r => ({
 }));
 
 const BASE = s => normalize(s.replace(/\(.*?\)|\[.*?\]/g, " ")).replace(/ /g, "");
-const BADALBUM = /\b(love|anthology|naked|songtrack|stripped|imagined|ukulele|symphony|karaoke|tribute|live|takes?|one hand clapping|archive)\b/i;
+const BASEN = s => BASE(s.split(" - ")[0]); // "Ebony And Ivory - Remixed 2015" -> "ebonyandivory"
+const BADALBUM = /\b(love|anthology|naked|songtrack|stripped|imagined|ukulele|symphony|karaoke|tribute|live|takes?|one hand clapping)\b/i;
 const BADNAME = /\b(take|takes|demo|live|one hand clapping|stripped|naked)\b/i;
 // únicas versões que existem em "Anthology" (músicas que só lá estão ou cuja versão original é essa)
-const ALLOW_ANTHOLOGY = new Set(["In Spite Of All The Danger", "Real Love", "Free As A Bird"]);
+// (e demos que são a única versão: Cayenne, Goodbye e Child Of Nature só existem em demo; Penina é da banda Jotta Herre)
+const ALLOW_ANTHOLOGY = new Set(["In Spite Of All The Danger", "Real Love", "Free As A Bird", "Cayenne", "Goodbye", "Child Of Nature"]);
+const ANY_ARTIST = new Set(["Penina", "Cayenne", "Goodbye", "Child Of Nature"]); // na playlist aparecem com outro artista // gravação do tema do Paul por outro artista
 
 // artistas aceites por música
 function expected(song) {
   if (song.group === "beatles") return ["the beatles", "the quarrymen"];
-  if (song.artist === "Wings") return ["wings", "paul mccartney"];
+  if (song.artist === "Wings" || song.artist === "Paul McCartney") return ["wings", "paul mccartney"];
   if (song.artist === "Plastic Ono Band") return ["plastic ono band", "john lennon"];
   return [normalize(song.artist)];
 }
@@ -47,12 +50,13 @@ for (const s of songs) {
   const want = BASE(s.title), exp = expected(s);
   const marker = ((s.title.match(/\(([^)]*)\)\s*$/) || [])[1] || "").toLowerCase();
   const cands = tracks.filter(t => {
-    const nb = BASE(t.name);
-    const nameOk = nb === want || (want.length >= 25 && distance(nb, want) <= 3);
-    if (!(nameOk && t.artists.some(a => exp.includes(normalize(a))))) return false;
-    if (!ALLOW_ANTHOLOGY.has(s.title) && (BADALBUM.test(t.album) || BADNAME.test(t.name))) return false; // fica para a pesquisa
+    const nb = BASE(t.name), nn = BASEN(t.name);
+    const nameOk = nb === want || nn === want || (s.title.startsWith("Silly Love Songs") && nb.startsWith("sillylovesongs")) || (want.length >= 25 && distance(nb, want) <= 3);
+    if (!(nameOk && (ANY_ARTIST.has(s.title) || t.artists.some(a => exp.includes(normalize(a)))))) return false;
+    if (!ALLOW_ANTHOLOGY.has(s.title) && (BADALBUM.test(t.album) || BADNAME.test(t.name.replace(new RegExp(s.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i"), " ")))) return false; // fica para a pesquisa (o título "Live And Let Die" não conta como "live")
     const lname = t.name.toLowerCase();
     if ((marker === "reprise" || marker === "play out") && !lname.includes(marker)) return false;
+    if (s.title.startsWith("Silly Love Songs") && !lname.includes("reprise")) return false;
     if (marker && marker !== "reprise" && marker !== "play out" && /\b(reprise|play out)\b/.test(lname)) return false;
     return true;
   });

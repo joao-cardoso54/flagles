@@ -124,7 +124,7 @@ export function pickBest(items, song) {
   const artist = normalize(artistOf(song));
   // artistas aceites (nome EXATO: "The Beatles Complete On Ukulele" não conta como "The Beatles")
   const accepted = song.group === "beatles" || !song.artist ? [artist, "the quarrymen"]
-    : song.artist === "Wings" ? ["wings", "paul mccartney"]
+    : song.artist === "Wings" || song.artist === "Paul McCartney" ? ["wings", "paul mccartney"]
     : song.artist === "Plastic Ono Band" ? ["plastic ono band", "john lennon"]
     : [normalize(song.artist)];
   let best = null;

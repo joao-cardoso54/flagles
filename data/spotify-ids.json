@@ -303,6 +303,10 @@
   "uri": "spotify:track:7zvMaTcCspbRMahT4DcjQG",
   "label": "In Spite Of All The Danger · The Quarrymen · Anthology 1"
  },
+ "cGAw_k3maXs": {
+  "uri": "spotify:track:1MQhdLXEHmUWLF0bu7uVff",
+  "label": "Child Of Nature - Esher Demo · The Beatles · The Beatles"
+ },
  "MUTz3LQEq1Q": {
   "uri": "spotify:track:0SEmf7XdvzCmmEjtpZKIKl",
   "label": "Love - Remastered 2010 · John Lennon · Plastic Ono Band"
@@ -399,6 +403,14 @@
   "uri": "spotify:track:1hwN2eAwsXgktvw9Qe8TrP",
   "label": "Photograph · Ringo Starr · Ringo"
  },
+ "nGRKmuLE0hs": {
+  "uri": "spotify:track:2VXAlfWBNhdiMEVUTGzGOb",
+  "label": "Cayenne - Home Demo · The Beatles · Anthology 1"
+ },
+ "1EIcqz-sjy4": {
+  "uri": "spotify:track:2cQGln8y7OgSOLxSHkgehd",
+  "label": "Goodbye - Home Demo · The Beatles · Abbey Road (Super Deluxe Edition)"
+ },
  "2TfWo3GsIII": {
   "uri": "spotify:track:1SV1fxF65n9NhRHp3KlBuu",
   "label": "Wonderful Christmastime - Edited Version / Remastered 2011 · Paul McCartney · McCartney II (Special Edition)"
@@ -411,6 +423,18 @@
   "uri": "spotify:track:1db0gbTSKdRQum8VlbNkiO",
   "label": "Say Say Say - Remastered 2015 · Paul McCartney, Michael Jackson · Pipes Of Peace (Remastered 2015)"
  },
+ "yXUNW6lYom8": {
+  "uri": "spotify:track:1Qa0Y05al633fG8f9Peytc",
+  "label": "Maybe I’m Amazed - Remastered 2011 · Paul McCartney · McCartney (Archive Collection)"
+ },
+ "8Y8fDsU0hX8": {
+  "uri": "spotify:track:5SwgE4wA0P7f6AEz2UQMB2",
+  "label": "Uncle Albert / Admiral Halsey - Medley / 2012 Remaster · Paul McCartney, Linda McCartney · RAM (Archive Collection)"
+ },
+ "r4mlhcFKzXQ": {
+  "uri": "spotify:track:3fVSMbeq8tY3G85yxcJwRU",
+  "label": "Ebony And Ivory - Remixed 2015 · Paul McCartney · Tug Of War"
+ },
  "wvs0ny0mSzc": {
   "uri": "spotify:track:7myQcEc8LeYI9zruFLdCXL",
   "label": "The Kiss Of Venus · Paul McCartney · McCartney III"
@@ -422,6 +446,14 @@
  "aSHkH_uMmtY": {
   "uri": "spotify:track:3YyUft6cq4Hy1swCCfBTju",
   "label": "Every Night - Remastered 2011 · Paul McCartney · McCartney"
+ },
+ "yK-FnCnBbUI": {
+  "uri": "spotify:track:05wvXK5IW9CjFQToL0N7Go",
+  "label": "The Back Seat Of My Car - Remastered 2012 · Paul McCartney, Linda McCartney · RAM (Archive Collection)"
+ },
+ "hhoiwDLVTnE": {
+  "uri": "spotify:track:6qYmf2NjhDfsF7x5U5DUOf",
+  "label": "Another Day - 2012 Remaster · Paul McCartney, Linda McCartney · RAM (Archive Collection)"
  },
  "FI5GSg6594k": {
   "uri": "spotify:track:4Ku6X72Q815qNd7ChuiDdD",
@@ -443,6 +475,18 @@
   "uri": "spotify:track:5WgzytOgtfKvaXw7Cma9IJ",
   "label": "Early Days · Paul McCartney · NEW"
  },
+ "qAlroNJsjzY": {
+  "uri": "spotify:track:3ZYGUrQ8qZiHv8FAaJ72Uo",
+  "label": "Calico Skies - 2020 Remaster · Paul McCartney · Flaming Pie (Archive Collection)"
+ },
+ "vpNficfiGh0": {
+  "uri": "spotify:track:4zwFBcMbGnqsHsI22vHtZ2",
+  "label": "Penina · Jotta Herre · Penina"
+ },
+ "bcP9rsYHaXk": {
+  "uri": "spotify:track:54CUvZlZ5HwV4U6k3IkoAd",
+  "label": "Silly Love Songs/Silly Love Songs (Reprise) - Remastered 1993 · Paul McCartney · Give My Regards To Broad Street"
+ },
  "55H6ZsR3SdY": {
   "uri": "spotify:track:3CCBwpqjdar1PG6HHulmD0",
   "label": "No More Lonely Nights (Ballad) - Remastered 1993 · Paul McCartney · Give My Regards To Broad Street"
@@ -454,6 +498,10 @@
  "kDkvYFkDyU0": {
   "uri": "spotify:track:7JcH5GX5u3X6q7y4WeRqDy",
   "label": "Goodnight Princess - Remastered 1993 · Paul McCartney · Give My Regards To Broad Street"
+ },
+ "08saJgLmytU": {
+  "uri": "spotify:track:2cHbN7OosXb4pA20G9Jcyg",
+  "label": "Live And Let Die - Main Title · Paul McCartney, Wings · All The Best (UK Version)"
  },
  "QZGurhtlve8": {
   "uri": "spotify:track:1H4idkmruFoJBg1DvUv2tY",
@@ -498,5 +546,9 @@
  "0Nz91y5uoGM": {
   "uri": "spotify:track:2xX5jloU4GKDbUhsM0YNku",
   "label": "Deliver Your Children - Remastered 1993 · Wings · London Town (Expanded Edition)"
+ },
+ "ZgRro7MyIEo": {
+  "uri": "spotify:track:0t9xFzNOfqws0DBbLzbU6x",
+  "label": "One More Kiss - 2018 Remaster · Wings · Red Rose Speedway (Archive Collection)"
  }
 }
