@@ -153,7 +153,8 @@ export async function findTrack(song) {
   for (const q of queries) {
     const r = await api("GET", `/search?${new URLSearchParams({ q, type: "track", limit: "10", market: "from_token" })}`);
     if (r.status === 429) throw new Error("O Spotify pediu para esperar um pouco; tenta já a seguir.");
-    if (r.status >= 400) throw new Error(`Pesquisa no Spotify falhou (${r.status}).`);
+    // mostra o motivo que o próprio Spotify dá (ex.: "User not registered in the Developer Dashboard")
+    if (r.status >= 400) throw new Error(`Pesquisa no Spotify falhou (${r.status})${r.json?.error?.message ? ": " + r.json.error.message : ""}`);
     const t = pickBest(r.json?.tracks?.items, song);
     if (t) {
       const found = { uri: t.uri, label: `${t.name} · ${t.artists.map(a => a.name).join(", ")} · ${t.album.name}` };
@@ -178,7 +179,7 @@ async function startPlayback(uri) {
     if (!dev) throw new Error(NO_DEVICE);
     r = await api("PUT", `/me/player/play?device_id=${encodeURIComponent(dev.id)}`, body);
   }
-  if (r.status === 403) throw new Error("O Spotify recusou: é preciso Premium e o teu email em 'User Management' do painel de developers.");
+  if (r.status === 403) throw new Error(`O Spotify recusou${r.json?.error?.message ? ": " + r.json.error.message : ""}. É preciso Premium e o teu email em 'User Management' do painel de developers.`);
   if (r.status === 401) throw new Error("Sessão do Spotify inválida; liga outra vez.");
   if (r.status === 404) throw new Error(NO_DEVICE);
   if (r.status === 429) throw new Error("O Spotify pediu para esperar um pouco; tenta já a seguir.");
