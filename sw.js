@@ -4,7 +4,7 @@
 // - Bandeiras (flagcdn.com): cache-first; "precache-flags" guarda-as todas para jogar offline.
 // - YouTube e o resto: não são intercetados (o áudio precisa de internet).
 // Ao mudar ficheiros da app, aumentar VERSION para forçar renovação da cache.
-const VERSION = "2026-10-31.25";
+const VERSION = "2026-10-31.26";
 const APP = `flagles-app-${VERSION}`;
 const FLAGS = "flagles-flags-v1";
 
@@ -18,7 +18,17 @@ const SHELL = [
 ];
 
 self.addEventListener("install", e => {
-  e.waitUntil(caches.open(APP).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  // antes: caches.open(APP).then(c => c.addAll(SHELL))  -> addAll usa a cache HTTP do browser e podia guardar ficheiros antigos
+  // (o GitHub Pages deixa os ficheiros em cache 10 minutos). cache:"reload" obriga a ir buscar a versão atual.
+  e.waitUntil(
+    caches.open(APP)
+      .then(c => Promise.all(SHELL.map(async url => {
+        const res = await fetch(new Request(url, { cache: "reload" }));
+        if (!res.ok) throw new Error(`${url}: ${res.status}`);
+        await c.put(url, res);
+      })))
+      .then(() => self.skipWaiting()),
+  );
 });
 
 self.addEventListener("activate", e => {

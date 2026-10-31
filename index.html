@@ -44,14 +44,14 @@
           <div class="answer-row" id="row-song">
             <span>Música</span>
             <div class="seg small" id="mode-song" role="group" aria-label="Resposta da música">
-              <button type="button" data-v="options">Opções</button>
+              <button type="button" data-v="options">Com opções</button>
               <button type="button" data-v="typing">Escrever</button>
             </div>
           </div>
           <div class="answer-row" id="row-flag">
             <span>Bandeira</span>
             <div class="seg small" id="mode-flag" role="group" aria-label="Resposta da bandeira">
-              <button type="button" data-v="options">Opções</button>
+              <button type="button" data-v="options">Com opções</button>
               <button type="button" data-v="typing">Escrever</button>
             </div>
           </div>
@@ -173,6 +173,25 @@
 
   <!-- antes: player do YouTube escondido (<div class="yt-host"><div id="yt"></div></div>). Já não é preciso: o áudio vem do Spotify. -->
 
+  <!-- Se algo rebentar (por exemplo ficheiros de versões diferentes na cache), mostra o erro em vez de ficar parado. -->
+  <div class="fatal" id="fatal" role="alert" hidden>
+    <p id="fatal-msg"></p>
+    <button type="button" id="fatal-fix" class="btn small-btn">Reparar e recarregar</button>
+  </div>
+  <script>
+    (function () {
+      var box = document.getElementById("fatal"), msg = document.getElementById("fatal-msg");
+      function show(text) { msg.textContent = "Erro: " + text; box.hidden = false; }
+      window.addEventListener("error", function (e) { show((e.message || "desconhecido") + (e.filename ? " (" + e.filename.split("/").pop() + ":" + e.lineno + ")" : "")); });
+      window.addEventListener("unhandledrejection", function (e) { show(String((e.reason && e.reason.message) || e.reason)); });
+      document.getElementById("fatal-fix").addEventListener("click", function () {
+        var jobs = [];
+        if (navigator.serviceWorker) jobs.push(navigator.serviceWorker.getRegistrations().then(function (r) { return Promise.all(r.map(function (x) { return x.unregister(); })); }));
+        if (window.caches) jobs.push(caches.keys().then(function (k) { return Promise.all(k.map(function (c) { return caches.delete(c); })); }));
+        Promise.all(jobs).catch(function () {}).then(function () { location.reload(); });
+      });
+    })();
+  </script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>
