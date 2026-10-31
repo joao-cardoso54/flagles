@@ -230,3 +230,10 @@ dialog p { margin: 0 0 18px; font: 600 20px/1.25 var(--display); }
 .spotify-row .btn { width: auto; flex: none; }
 .spotify-row span { color: var(--muted); line-height: 1.3; }
 .textlink { display: inline-block; margin-top: 12px; font-size: 14px; color: var(--accent); }
+
+/* ---- "nunca repetir entre níveis" (ecrã dos níveis) ---- */
+.norepeat { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; }
+.norepeat .check { margin-top: 0; }
+.seen-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; }
+.seen-row .hint { text-align: left; min-height: 0; }
+.seen-row .btn { width: auto; flex: none; min-height: 36px; padding: 6px 12px; }

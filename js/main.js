@@ -22,7 +22,7 @@ function show(name) {
 
 /* ------------------------------------------------------------------ definições */
 
-const DEFAULTS = { content: "both", songMode: "options", flagMode: "options", solo: true, territories: true, states: true, source: "auto" };
+const DEFAULTS = { content: "both", songMode: "options", flagMode: "options", solo: true, territories: true, states: true, source: "auto", noRepeat: false };
 const settings = { ...DEFAULTS };
 try { Object.assign(settings, JSON.parse(localStorage.getItem("flagles-settings") || "{}")); } catch (e) {}
 
@@ -150,7 +150,12 @@ function startTraining() {
 
 function startLevel(n) {
   buildPools();
-  run = { level: n, mode: modeKey(), round: 0, rounds: LEVELS[n - 1].rounds, lives: LIVES, score: 0, usedSongs: new Set(), usedFlags: new Set() };
+  run = { level: n, mode: modeKey(), round: 0, rounds: LEVELS[n - 1].rounds, lives: LIVES, score: 0, usedSongs: new Set(), usedFlags: new Set(), cycled: false };
+  if (settings.noRepeat) { // "nunca repetir": começa já com tudo o que saiu em níveis anteriores marcado como usado
+    const seenS = progress.seenSet(run.mode, "songs"), seenF = progress.seenSet(run.mode, "flags");
+    for (const s of songs) if (seenS.has(s.videoId)) run.usedSongs.add(s);
+    for (const f of flags) if (seenF.has(f.code)) run.usedFlags.add(f);
+  }
   $("hud").hidden = false;
   $("timer").hidden = false;
   show("game");
@@ -219,6 +224,20 @@ function loseLife() {
 
 /* ------------------------------------------------------------------ ronda */
 
+// Escolhe o próximo item do nível sem repetir (dentro do nível e, se ligado, entre níveis).
+// Quando já saiu tudo, o histórico recomeça (e o jogador é avisado no resultado).
+function take(pool, tier, used, kind, keyOf) {
+  const before = used.size;
+  const item = pickByTier(pool, tier, used);
+  if (used.size < before) { // esgotou: pickByTier recomeçou o ciclo
+    run.cycled = true;
+    if (settings.noRepeat) progress.resetSeen(run.mode, kind);
+  }
+  used.add(item);
+  if (settings.noRepeat) progress.markSeen(run.mode, kind, keyOf(item));
+  return item;
+}
+
 function newRound() {
   songDone = !hasSongs();
   flagDone = !hasFlags();
@@ -229,12 +248,10 @@ function newRound() {
   if (inLevel()) {
     run.round++;
     const tier = pickTier(LEVELS[run.level - 1].w);
-    if (hasSongs()) { song = pickByTier(songs, tier, run.usedSongs); run.usedSongs.add(song); }
-    if (hasFlags()) {
-      // com música, a bandeira é do mesmo escalão que a música (que pode ter caído num escalão vizinho)
-      flag = pickByTier(flags, hasSongs() ? song.tier : tier, run.usedFlags);
-      run.usedFlags.add(flag);
-    }
+    // antes: song = pickByTier(songs, tier, run.usedSongs); run.usedSongs.add(song);
+    if (hasSongs()) song = take(songs, tier, run.usedSongs, "songs", s => s.videoId);
+    // com música, a bandeira é do mesmo escalão que a música (que pode ter caído num escalão vizinho)
+    if (hasFlags()) flag = take(flags, hasSongs() ? song.tier : tier, run.usedFlags, "flags", f => f.code);
     renderHud();
   } else {
     if (hasSongs()) song = randomOf(songs, song);
@@ -434,6 +451,18 @@ function renderLevels() {
   });
   $("levels-total").textContent = `Pontos: ${progress.totalBest(modeKey())}`;
   $("levels-mode").textContent = modeLabel();
+  renderNoRepeat();
+}
+
+// Interruptor "nunca repetir entre níveis" e contagem do que já saiu neste modo.
+function renderNoRepeat() {
+  buildPools(); // as contagens seguem as opções atuais (solo, territórios, estados)
+  $("opt-norepeat").checked = settings.noRepeat;
+  const parts = [];
+  if (hasSongs()) parts.push(`${progress.seenSet(modeKey(), "songs").size ? [...progress.seenSet(modeKey(), "songs")].filter(id => songs.some(s => s.videoId === id)).length : 0}/${songs.length} músicas`);
+  if (hasFlags()) parts.push(`${progress.seenSet(modeKey(), "flags").size ? [...progress.seenSet(modeKey(), "flags")].filter(c => flags.some(f => f.code === c)).length : 0}/${flags.length} bandeiras`);
+  $("seen-info").textContent = settings.noRepeat ? `Já saíram: ${parts.join(" · ")}` : "";
+  $("seen-reset").hidden = !settings.noRepeat;
 }
 
 function showResult(win) {
@@ -449,6 +478,7 @@ function showResult(win) {
   $("res-detail").textContent = win
     ? `${record ? "Novo recorde! " : ""}Vidas que sobraram: ${run.lives}${best != null && !record ? ` · Melhor: ${best}` : ""}`
     : `Chegaste à ronda ${run.round} de ${run.rounds}.`;
+  if (run.cycled && settings.noRepeat) $("res-detail").textContent += " Já tinhas visto tudo: o histórico recomeçou.";
   $("res-next").hidden = !(win && n < LEVELS.length);
   show("result-screen");
 }
@@ -510,6 +540,8 @@ Promise.all([loadSongs(), loadFlags()])
 
 $("play").addEventListener("click", startTraining);
 $("play-levels").addEventListener("click", () => { renderLevels(); show("levels"); });
+$("opt-norepeat").addEventListener("change", e => { settings.noRepeat = e.target.checked; saveSettings(); renderNoRepeat(); });
+$("seen-reset").addEventListener("click", () => { progress.resetSeen(modeKey()); renderNoRepeat(); });
 $("levels-back").addEventListener("click", () => { renderMenu(); show("home"); });
 
 $("next").addEventListener("click", () => {

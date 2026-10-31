@@ -40,6 +40,20 @@ export const bestScore = (mode, n) => get(mode).best[n] ?? null;
 export const highestCompleted = mode => Math.max(0, ...Object.keys(get(mode).best).map(Number));
 export const totalBest = mode => Object.values(get(mode).best).reduce((a, b) => a + b, 0);
 
+// Histórico do que já saiu (para o modo "nunca repetir entre níveis"): ids das músicas e códigos das bandeiras, por modo.
+const seenOf = mode => (get(mode).seen ??= { songs: [], flags: [] });
+export const seenSet = (mode, kind) => new Set(seenOf(mode)[kind]);
+export const seenCount = (mode, kind) => seenOf(mode)[kind].length;
+export function markSeen(mode, kind, id) {
+  const list = seenOf(mode)[kind];
+  if (!list.includes(id)) { list.push(id); save(); }
+}
+export function resetSeen(mode, kind) {
+  const s = seenOf(mode);
+  if (kind) s[kind] = []; else { s.songs = []; s.flags = []; }
+  save();
+}
+
 // Regista um nível concluído nesse modo. Devolve true se bateu o recorde desse nível.
 export function complete(mode, level, score) {
   const s = get(mode);
