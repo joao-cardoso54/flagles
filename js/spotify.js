@@ -151,7 +151,7 @@ export async function findTrack(song) {
   const artist = artistOf(song);
   const queries = [`track:"${title}" artist:"${artist}"`, `${title} ${artist}`];
   for (const q of queries) {
-    const r = await api("GET", `/search?${new URLSearchParams({ q, type: "track", limit: "10", market: "from_token" })}`);
+    const r = await api("GET", `/search?${new URLSearchParams({ q, type: "track", limit: "10", market: "PT" })}`);
     if (r.status === 429) throw new Error("O Spotify pediu para esperar um pouco; tenta já a seguir.");
     // mostra o motivo que o próprio Spotify dá (ex.: "User not registered in the Developer Dashboard")
     if (r.status >= 400) throw new Error(`Pesquisa no Spotify falhou (${r.status})${r.json?.error?.message ? ": " + r.json.error.message : ""}`);
