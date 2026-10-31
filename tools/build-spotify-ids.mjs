@@ -1,3 +1,4 @@
+// NOTA: data/spotify-ids.json final foi gerado pela página spotify-teste.html ("Verificar todas") a partir deste mapeamento + pesquisa, e tem os álbuns. Não voltar a correr sem necessidade: sobrescreve-o.
 // Gera data/spotify-ids.json a partir da exportação da playlist do Spotify (CSV do Exportify).
 // Cada música do jogo é associada à faixa da playlist com o mesmo título e o artista certo
 // (escolhe a versão remasterizada de estúdio). O álbum é descoberto na app, na primeira vez que a música toca.
