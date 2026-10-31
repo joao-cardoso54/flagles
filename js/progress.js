@@ -48,6 +48,12 @@ export function markSeen(mode, kind, id) {
   const list = seenOf(mode)[kind];
   if (!list.includes(id)) { list.push(id); save(); }
 }
+export function unmarkSeen(mode, kind, ids) {
+  const s = seenOf(mode);
+  const drop = new Set(ids);
+  s[kind] = s[kind].filter(id => !drop.has(id));
+  save();
+}
 export function resetSeen(mode, kind) {
   const s = seenOf(mode);
   if (kind) s[kind] = []; else { s.songs = []; s.flags = []; }

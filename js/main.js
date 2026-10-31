@@ -7,7 +7,7 @@ import {
   loadFlags, flagUrl, pickFlag, pickFlagOptions, flagAnswers,
 } from "./data.js";
 import { judge, flagEdits, songEdits } from "./text.js";
-import { ROUND_SECONDS, LIVES, SONG_POINTS, FLAG_POINTS, SPEED_BONUS_MAX, LEVELS, pickTier, pickByTier } from "./levels.js";
+import { ROUND_SECONDS, LIVES, SONG_POINTS, FLAG_POINTS, SPEED_BONUS_MAX, LEVELS, pickTier, pickByTier, pickKeepTier } from "./levels.js";
 import * as progress from "./progress.js";
 import { APP_VERSION } from "./version.js";
 
@@ -227,12 +227,19 @@ function loseLife() {
 
 // Escolhe o próximo item do nível sem repetir (dentro do nível e, se ligado, entre níveis).
 // Quando já saiu tudo, o histórico recomeça (e o jogador é avisado no resultado).
-function take(pool, tier, used, kind, keyOf) {
-  const before = used.size;
-  const item = pickByTier(pool, tier, used);
-  if (used.size < before) { // esgotou: pickByTier recomeçou o ciclo
-    run.cycled = true;
-    if (settings.noRepeat) progress.resetSeen(run.mode, kind);
+// antes: pickByTier em ambos os casos; com "nunca repetir", quando um escalão acabava passava ao escalão ao lado e a
+// dificuldade desviava-se (ver a simulação dos 15 níveis). Agora mantém sempre o escalão e recomeça só esse.
+function take(pool, tier, used, kind, keyOf, prev) {
+  let item;
+  if (settings.noRepeat) {
+    const r = pickKeepTier(pool, tier, used, prev);
+    item = r.item;
+    if (r.cleared.length) { // este escalão já tinha saído todo: volta a estar disponível
+      run.cycled = true;
+      progress.unmarkSeen(run.mode, kind, r.cleared.map(keyOf));
+    }
+  } else {
+    item = pickByTier(pool, tier, used);
   }
   used.add(item);
   if (settings.noRepeat) progress.markSeen(run.mode, kind, keyOf(item));
@@ -250,9 +257,9 @@ function newRound() {
     run.round++;
     const tier = pickTier(LEVELS[run.level - 1].w);
     // antes: song = pickByTier(songs, tier, run.usedSongs); run.usedSongs.add(song);
-    if (hasSongs()) song = take(songs, tier, run.usedSongs, "songs", s => s.videoId);
+    if (hasSongs()) song = take(songs, tier, run.usedSongs, "songs", s => s.videoId, song);
     // com música, a bandeira é do mesmo escalão que a música (que pode ter caído num escalão vizinho)
-    if (hasFlags()) flag = take(flags, hasSongs() ? song.tier : tier, run.usedFlags, "flags", f => f.code);
+    if (hasFlags()) flag = take(flags, hasSongs() ? song.tier : tier, run.usedFlags, "flags", f => f.code, flag);
     renderHud();
   } else {
     if (hasSongs()) song = randomOf(songs, song);
@@ -487,7 +494,7 @@ function showResult(win) {
   $("res-detail").textContent = win
     ? `${record ? "Novo recorde! " : ""}Vidas que sobraram: ${run.lives}${best != null && !record ? ` · Melhor: ${best}` : ""}`
     : `Chegaste à ronda ${run.round} de ${run.rounds}.`;
-  if (run.cycled && settings.noRepeat) $("res-detail").textContent += " Já tinhas visto tudo: o histórico recomeçou.";
+  if (run.cycled && settings.noRepeat) $("res-detail").textContent += " Algumas já tinham saído todas do seu escalão e voltaram a aparecer (a dificuldade mantém-se).";
   $("res-next").hidden = !(win && n < LEVELS.length);
   show("result-screen");
 }

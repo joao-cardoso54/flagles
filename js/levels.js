@@ -40,6 +40,20 @@ export function pickTier(weights) {
   return weights.findIndex(w => w > 0) + 1;
 }
 
+// Modo "nunca repetir entre níveis": nunca muda de escalão (a dificuldade fica certa).
+// Escolhe um item do escalão que ainda não saiu; se esse escalão já acabou, recomeça SÓ esse escalão
+// (as músicas desse escalão voltam a poder sair) e evita repetir logo o item anterior (`prev`).
+// Devolve { item, cleared }: `cleared` são os itens do escalão que voltaram a ficar disponíveis.
+export function pickKeepTier(pool, tier, used, prev = null) {
+  const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+  const fresh = pool.filter(x => x.tier === tier && !used.has(x));
+  if (fresh.length) return { item: pick(fresh), cleared: [] };
+  const same = pool.filter(x => x.tier === tier);
+  if (!same.length) return { item: pickByTier(pool, tier, used), cleared: [] }; // escalão vazio: o mais próximo
+  for (const x of same) used.delete(x);
+  return { item: pick(same.length > 1 ? same.filter(x => x !== prev) : same), cleared: same };
+}
+
 // Escolhe um item do escalão pedido que ainda não saiu (`used`); se o escalão acabou, usa o mais próximo.
 // Se já saiu tudo, recomeça (só acontece em níveis longos com pools pequenos).
 export function pickByTier(pool, tier, used) {
