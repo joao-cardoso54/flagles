@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flagles - Dificuldade das bandeiras</title>
+<style>
+  :root { --bg:#fafaf9; --fg:#1c1917; --mut:#78716c; --line:#e7e5e4; --card:#fff; --acc:#2563eb; --acc-fg:#fff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#141413; --fg:#f5f5f4; --mut:#a8a29e; --line:#2a2826; --card:#1c1b19; --acc:#60a5fa; --acc-fg:#0c0a09; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.4 system-ui,-apple-system,Segoe UI,sans-serif; }
+  header { position:sticky; top:0; background:var(--bg); border-bottom:1px solid var(--line); padding:12px 16px; z-index:2; }
+  h1 { font-size:18px; margin:0 0 4px; font-weight:650; }
+  .legend { color:var(--mut); font-size:13px; margin:0 0 10px; }
+  .bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .chip, .btn { border:1px solid var(--line); background:var(--card); color:var(--fg); border-radius:999px; padding:6px 12px; font:inherit; font-size:14px; cursor:pointer; }
+  .chip.on { background:var(--acc); color:var(--acc-fg); border-color:var(--acc); }
+  input[type=search] { flex:1 1 140px; min-width:120px; border:1px solid var(--line); background:var(--card); color:var(--fg); border-radius:999px; padding:6px 12px; font:inherit; font-size:14px; }
+  main { max-width:760px; margin:0 auto; padding:8px 16px 80px; }
+  .row { display:flex; align-items:center; gap:12px; padding:8px 0; border-bottom:1px solid var(--line); }
+  .row img { width:60px; height:40px; object-fit:contain; flex:none; border:1px solid var(--line); border-radius:4px; background:var(--card); }
+  .t { flex:1; min-width:0; }
+  .t small { color:var(--mut); margin-left:6px; }
+  .opts { display:flex; gap:4px; flex:none; }
+  .opts button { width:36px; height:36px; border:1px solid var(--line); background:var(--card); color:var(--fg); border-radius:10px; font:inherit; font-size:15px; cursor:pointer; }
+  .opts button.on { background:var(--acc); color:var(--acc-fg); border-color:var(--acc); }
+  .opts button.x.on { background:#b91c1c; border-color:#b91c1c; color:#fff; }
+  .status { color:var(--mut); font-size:13px; margin-left:auto; }
+  @media (max-width:480px) { .row { flex-wrap:wrap; } .t { flex-basis:calc(100% - 80px); } .opts { margin-left:72px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Dificuldade das bandeiras</h1>
+  <p class="legend">1 toda a gente conhece · 2 conhecida · 3 quem gosta de geografia · 4 só especialistas · ✕ excluir. Já vem preenchido com a minha proposta (a azul): corrige só o que discordares. Guarda sozinho neste browser.</p>
+  <div class="bar">
+    <input type="search" id="q" placeholder="Procurar...">
+    <button class="chip on" data-f="all">Todas</button>
+    <button class="chip" data-f="1">1</button>
+    <button class="chip" data-f="2">2</button>
+    <button class="chip" data-f="3">3</button>
+    <button class="chip" data-f="4">4</button>
+    <button class="chip" data-f="x">✕</button>
+    <button class="chip" data-f="country">Países</button>
+    <button class="chip" data-f="territory">Territórios</button>
+    <button class="chip" data-f="state">Estados EUA</button>
+    <button class="chip" data-f="other">Outros</button>
+    <button class="chip" data-f="changed">Alteradas</button>
+    <button class="btn" id="copy">Copiar JSON</button>
+    <span class="status" id="status"></span>
+  </div>
+</header>
+<main id="list"></main>
+<script>
+// {code, name, aliases, kind, tier}  -  tier = proposta minha
+const FLAGS = /*FLAGS*/;
+const KEY = "flagles-flag-tiers-v1";
+let mine = {};
+try { mine = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) {}
+let filter = "all", query = "";
+
+const list = document.getElementById("list");
+const status = document.getElementById("status");
+
+// valor atual: o do utilizador, se existir, senão a minha proposta
+const cur = f => (f.code in mine ? mine[f.code] : String(f.tier));
+function save() { try { localStorage.setItem(KEY, JSON.stringify(mine)); } catch (e) {} }
+function norm(s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+
+function render() {
+  list.innerHTML = "";
+  let shown = 0;
+  FLAGS.forEach(f => {
+    const v = cur(f);
+    const changed = f.code in mine && mine[f.code] !== String(f.tier);
+    if (["1","2","3","4","x"].includes(filter) && v !== filter) return;
+    if (["country","territory","state","other"].includes(filter) && f.kind !== filter) return;
+    if (filter === "changed" && !changed) return;
+    if (query && !norm(f.name + " " + f.aliases.join(" ")).includes(norm(query))) return;
+    shown++;
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `<img loading="lazy" src="https://flagcdn.com/h40/${f.code}.png" alt=""><span class="t">${f.name}<small>${{ territory: "território", state: "estado dos EUA", other: "outro" }[f.kind] || ""}${f.twins && f.twins.length ? " · igual a " + f.twins.join(", ") : ""}${changed ? " · alterada" : ""}</small></span>`;
+    const opts = document.createElement("div");
+    opts.className = "opts";
+    ["1","2","3","4","x"].forEach(o => {
+      const b = document.createElement("button");
+      b.textContent = o === "x" ? "✕" : o;
+      if (o === "x") b.classList.add("x");
+      if (v === o) b.classList.add("on");
+      b.onclick = () => {
+        if (o === String(f.tier)) delete mine[f.code]; else mine[f.code] = o;
+        save(); render();
+      };
+      opts.appendChild(b);
+    });
+    row.appendChild(opts);
+    list.appendChild(row);
+  });
+  const nChanged = Object.keys(mine).filter(c => { const f = FLAGS.find(x => x.code === c); return f && mine[c] !== String(f.tier); }).length;
+  status.textContent = `${nChanged} alteradas · ${shown} visíveis`;
+}
+
+document.querySelectorAll(".chip").forEach(c => c.onclick = () => {
+  document.querySelectorAll(".chip").forEach(x => x.classList.remove("on"));
+  c.classList.add("on"); filter = c.dataset.f; render();
+});
+document.getElementById("q").oninput = e => { query = e.target.value; render(); };
+document.getElementById("copy").onclick = async () => {
+  const out = {};
+  FLAGS.forEach(f => { out[f.code] = cur(f); });
+  const text = JSON.stringify(out, null, 1);
+  try { await navigator.clipboard.writeText(text); status.textContent = "JSON copiado"; }
+  catch (e) { window.prompt("Copia o JSON:", text); }
+};
+render();
+</script>
+</body>
+</html>

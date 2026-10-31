@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141310" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Bandeiras e Beatles: adivinha a bandeira e a música.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="The Flagles">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/favicon-64.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <title>The Flagles</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+
+    <!-- Menu -->
+    <section id="home" class="screen">
+      <header class="brand">
+        <img class="mark" src="icons/logo.svg" alt="" width="88" height="88">
+        <h1 class="logo">The Flagles</h1>
+        <p class="tagline">Bandeiras e Beatles</p>
+      </header>
+
+      <div class="panel">
+        <div class="field">
+          <span class="field-label">Jogar com</span>
+          <div class="seg" id="content" role="group" aria-label="Conteúdo">
+            <button type="button" data-v="songs">Beatles</button>
+            <button type="button" data-v="flags">Bandeiras</button>
+            <button type="button" data-v="both">Os dois</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="field-label">Responder</span>
+          <div class="answer-row" id="row-song">
+            <span>Música</span>
+            <div class="seg small" id="mode-song" role="group" aria-label="Resposta da música">
+              <button type="button" data-v="options">Opções</button>
+              <button type="button" data-v="typing">Escrever</button>
+            </div>
+          </div>
+          <div class="answer-row" id="row-flag">
+            <span>Bandeira</span>
+            <div class="seg small" id="mode-flag" role="group" aria-label="Resposta da bandeira">
+              <button type="button" data-v="options">Opções</button>
+              <button type="button" data-v="typing">Escrever</button>
+            </div>
+          </div>
+        </div>
+
+        <details class="more">
+          <summary>Mais opções</summary>
+          <label class="check" id="row-solo"><input type="checkbox" id="opt-solo"> Incluir carreiras a solo (Lennon, McCartney, Harrison, Ringo)</label>
+          <label class="check" id="row-terr"><input type="checkbox" id="opt-terr"> Incluir territórios (Anguila, Guam, ...) e UE, ONU, Antártida</label>
+          <label class="check" id="row-states"><input type="checkbox" id="opt-states"> Incluir estados dos EUA</label>
+        </details>
+      </div>
+
+      <div class="actions">
+        <!-- passo 5b: <button id="play" class="btn primary" disabled>A carregar…</button> -->
+        <button id="play-levels" class="btn primary big" disabled>A carregar…</button>
+        <button id="play" class="btn ghost" disabled>Treino livre</button>
+      </div>
+
+      <p class="hint" id="record"></p>
+      <p class="note" id="offline-note" hidden></p>
+      <button id="install" class="btn ghost small-btn" hidden>Instalar a app</button>
+      <p class="note" id="ios-tip" hidden>Para instalar no iPhone: toca em Partilhar e depois em "Adicionar ao ecrã principal".</p>
+      <p class="version" id="version"></p>
+    </section>
+
+    <!-- Escolha de nível -->
+    <section id="levels" class="screen" hidden>
+      <header class="bar">
+        <button id="levels-back" class="link" type="button">&#8249; Menu</button>
+        <span class="label" id="levels-total"></span>
+      </header>
+      <h2 class="title">Níveis <span class="mode-tag" id="levels-mode"></span></h2>
+      <div class="level-grid" id="level-grid"></div>
+    </section>
+
+    <!-- Resultado de um nível -->
+    <section id="result-screen" class="screen result" hidden>
+      <h2 class="title" id="res-title"></h2>
+      <p class="score-big" id="res-score"></p>
+      <p class="hint" id="res-detail"></p>
+      <div class="actions">
+        <button id="res-next" class="btn primary big">Próximo nível</button>
+        <button id="res-retry" class="btn">Tentar de novo</button>
+        <button id="res-levels" class="btn ghost">Níveis</button>
+      </div>
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+    </section>
+
+    <!-- Jogo -->
+    <section id="game" class="screen" hidden>
+      <header class="bar sticky">
+        <button id="menu-btn" class="link" type="button">&#8249; Menu</button>
+        <div class="hud" id="hud" hidden>
+          <span id="hud-level"></span>
+          <span class="lives" id="lives" aria-label="Vidas"></span>
+        </div>
+        <span class="label" id="score">Certas: 0 / 0</span>
+      </header>
+      <div class="timer" id="timer" hidden><div class="track"><div id="timer-bar"></div></div><span id="timer-text"></span></div>
+
+      <div class="q card q-song" id="q-song">
+        <div class="audio">
+          <button id="listen" class="play">Ouvir 1s</button>
+          <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="steps" id="steps"></div>
+        <p class="hint" id="status">&nbsp;</p>
+        <button id="advance" class="btn small-btn">Avançar</button>
+        <div class="options" id="options"></div>
+        <form id="song-form" class="typebox" hidden>
+          <input id="song-input" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="done" placeholder="Nome da música">
+          <button class="btn primary" type="submit">Verificar</button>
+        </form>
+        <p class="result" id="result" aria-live="polite"></p>
+      </div>
+
+      <div class="q card q-flag" id="q-flag">
+        <div class="flag-wrap"><img id="flag-img" class="flag" alt="Bandeira a adivinhar" width="320" height="213" crossorigin="anonymous"></div>
+        <div class="options" id="flag-options"></div>
+        <form id="flag-form" class="typebox" hidden>
+          <input id="flag-input" type="text" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="done" placeholder="Nome do país">
+          <button class="btn primary" type="submit">Verificar</button>
+        </form>
+        <p class="result" id="flag-result" aria-live="polite"></p>
+      </div>
+
+      <div class="nextbar"><button id="next" class="btn primary big" hidden>Seguinte</button></div>
+    </section>
+  </main>
+
+  <dialog id="confirm">
+    <form method="dialog">
+      <p>Sair do nível? Perdes o progresso desta tentativa.</p>
+      <div class="row">
+        <button class="btn" value="cancel">Continuar</button>
+        <button class="btn primary" value="ok">Sair</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Player do YouTube: quase invisível, mas presente (alguns browsers não tocam se estiver display:none) -->
+  <div class="yt-host"><div id="yt"></div></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

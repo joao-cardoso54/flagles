@@ -1,0 +1,2303 @@
+[
+  {
+    "title": "Something",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "MZ3Vh8jZFdE",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Oh! Darling",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "erMgpfiOMSU",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "I Want You (She's So Heavy)",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "wNL6bd7SpDE",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Golden Slumbers",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "hwi2ynHPB80",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Come Together",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "wqaKHHxQFZc",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Here Comes The Sun",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "GKdl-GCsNJ0",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Carry That Weight",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "0RagyYjgY4g",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "The End",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "A5Tuu6UnEe8",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Maxwell's Silver Hammer",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "3HuXFfq79I8",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "You Never Give Me Your Money",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "W8uZjeeOcQo",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Because",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "2XyuywVao7g",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Octopus's Garden",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "x9VzJpl05N0",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Polythene Pam",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Jq7VkBUQ2Xg",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Mean Mr Mustard",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Ts8L-6ghQuA",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Her Majesty",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "QhmyhwszSWA",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Sun King",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "ujBRavK6YWo",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Love Me Do",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "0pGOFX1D_jg",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "P.S. I Love You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "MA5DkiVKSlM",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Please Please Me",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "czw8eqepir8",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Ask Me Why",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "2ttGjtfQ7EA",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I Saw Her Standing There",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "oxwAB3SECtc",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Misery",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "qhbcN3ew9z0",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Anna (Go To Him)",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "b3zNKWyLfus",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Chains",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "rJOhavaeJYk",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Boys",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Qr8OuW5JJgQ",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Baby It's You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "AWUTlM6hz0g",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Do You Want To Know A Secret",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "uRQ7ecvU56k",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "A Taste of Honey",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "MkQ1eOcl5ug",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "There's A Place",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "vTsbYbN8VVI",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Twist and Shout",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "2RicaUqd9Hg",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "From Me To You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "-XTB3bCYMK0",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Thank You Girl",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "cGka0tXQYAI",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "She Loves You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "oVCwDl-S09A",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "I'll Get You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "nFEHqFUONHY",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "It Won't Be Long",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "UVKU6SevefY",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "All I've Got To Do",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "anMW41uvb_s",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "All My Loving",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "TSpiwK5fig0",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Don't Bother Me",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "k03IQbaTcxc",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Little Child",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "DVMfLIoejTc",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Till There Was You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "SHAqAO7w8M8",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Please Mister Postman",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "v2Kk5IG2b8E",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Roll Over Beethoven",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Hz5jXwOXgKQ",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Hold Me Tight",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "H42Ou13za30",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "You Really Got A Hold On Me",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "9rokS8Ao4nQ",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I Wanna Be Your Man",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "mnct7Qf3SUQ",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Devil In Her Heart",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "IGe-jfFrxCk",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Not A Second Time",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Gi8dTDuRCOk",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Money (That's What I Want)",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "CeWjEYhk7Xo",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I Want To Hold Your Hand",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "v1HDt1tknTc",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "This Boy",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "VhuU8KDLdO4",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Can't Buy Me Love",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "h3WJiqc_bEs",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "You Can't Do That",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "6PK21u7YzmI",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Long Tall Sally",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "w-iA9-D_Mbw",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I Call Your Name",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "r5mzQHQxoSg",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Slow Down",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "HbsyDHxca7Y",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Matchbox",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Brd2v1NcYWg",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "A Hard Day's Night",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "AMSiHdrHl0g",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Things We Said Today",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "NItAlTsPuQg",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I Should Have Known Better",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "5en2JMLA8Z0",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "If I Fell",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "F_80s6S_7Vw",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "I'm Happy Just To Dance With You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "B7X1oUfa8uE",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "And I Love Her",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "5tc0gLSSU1M",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Tell Me Why",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "GVub1QCUCGc",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Any Time At All",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "WuB7F-gRdJo",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I'll Cry Instead",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "zfnkMBOSIUQ",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "When I Get Home",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "TN8odbpRgnU",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I'll Be Back",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "fJSTBNTac6k",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I Feel Fine",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "xLBVgnZyuic",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "She's A Woman",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "lQomFaLyQ5I",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "No Reply",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "YgFo9STa70E",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I'm A Loser",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "f70Z3cvrQd0",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Baby's In Black",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "TJFpUb7JGYo",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Rock And Roll Music",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "IRF6nmqcbxo",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I'll Follow The Sun",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "28d_A_NuJ7A",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Mr. Moonlight",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "FZQ8nWZJrhA",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Kansas City - Hey, Hey, Hey, Hey",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "4xvW-Nf9VAw",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Eight Days A Week",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "XTfmuDjwQTw",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Words Of Love",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "no-nuFTHetE",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Honey Don't",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "XIc-VCw5r0A",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Every Little Thing",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "jrDikOz8YSU",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I Don't Want To Spoil The Party",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "zqVDvLDLsjI",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "What You're Doing",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "7Sba2LbhkVY",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Everybody's Trying To Be My Baby",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "wn7FiAdHcmw",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Ticket To Ride",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "UHsN9d4FTVI",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Yes It Is",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "acWj7M0-9rY",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "You Like Me Too Much",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "ZqCf3D26YlA",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Bad Boy",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "u8hOfWs2Xmw",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Dizzy Miss Lizzy",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "psJ1cHm_su4",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Tell Me What You See",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "bztiAcsATyI",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Help!",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "MKUex3fci5c",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "The Night Before",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "7tD40D7jk-Q",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "You've Got To Hide Your Love Away",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "V8nLraecPRY",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I Need You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "6t24nX_sak8",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Another Girl",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "EMBYNWr5R_U",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "You're Going To Lose That Girl",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "vqpEZuv29qE",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Act Naturally",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "yjJd8rZPcAQ",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "It's Only Love",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "OPiKDHYCkjs",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I've Just Seen A Face",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "m8LbJfC0SYM",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Yesterday",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "NrgmdOz227I",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "We Can Work It Out",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "IgRrWPdzkao",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Day Tripper",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "2IbPn5j2YKk",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Drive My Car",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "kfSQkZuIx84",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Norwegian Wood (This Bird Has Flown)",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Y_V6y1ZCg_8",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "You Won't See Me",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "OsjTO0yZQjk",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Nowhere Man",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "8scSwaKbE64",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Think For Yourself",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "vtx5NTxebJk",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "The Word",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "RfBEqiEhCgM",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Michelle",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "WoBLi5eE-wY",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "What Goes On",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "PtC_l4kz7yw",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Girl",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "-8l3ntDR_lI",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I'm Looking Through You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "gH6i9JAdJrQ",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "In My Life",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "YBcdt6DsLQA",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Wait",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "qJngWval8Bc",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "If I Needed Someone",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Kt5OoWr4v1k",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Run For Your Life",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "yzHXtxcIkg4",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Paperback Writer",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "SepZDSkY4Ro",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Rain",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "FkY9BEuLJk4",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Eleanor Rigby",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "ZqYK9Qfh6kE",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Yellow Submarine",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "KuqMJ9qdflw",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Taxman",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "xYCntCKHy6I",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I'm Only Sleeping",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "sAG3m3p9UeI",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Love You To",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "tE93TJDKTQU",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Here, There, And Everywhere",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "vs7U4xfkAfI",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "She Said She Said",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "3iybCwJdudM",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Good Day Sunshine",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "6dC7ILQ_vtE",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "And Your Bird Can Sing",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "sOUlbredoUM",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "For No One",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "sep5E3ssXLQ",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Doctor Robert",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "-iYhUmcsFjI",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I Want To Tell You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "yqUUBUbfK3U",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Got To Get You Into My Life",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "HzfnEB5foq4",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Tomorrow Never Knows",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "O58ouPdjgo0",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Strawberry Fields Forever",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "gS_-aHQxUqw",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Penny Lane",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "0wE0G9GTCAs",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Sgt. Pepper's Lonely Hearts Club Band",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "xwwABrNLvFs",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "With A Little Help From My Friends",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "GooL7-iPMYI",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Lucy In The Sky With Diamonds",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "l7x-0c9jl4Y",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Getting Better",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "w5F8wG4tUgA",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Fixing A Hole",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "nGRoSJaz-nw",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "She's Leaving Home",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "LNsIgZqTTDY",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Being For The Benefit Of Mr. Kite",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "TJNndwGFJIM",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Within You Without You",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Mr54nqD1URA",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "When I'm Sixty-Four",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "f7TANPFMf1k",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Lovely Rita",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "eqe_yLT8wd4",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Good Morning, Good Morning",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Ru3O23zqqaE",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Sgt. Pepper's Lonely Hearts Club Band (Reprise)",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "6hMy0ByBiKM",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "A Day In The Life",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "YSGHER4BWME",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "All You Need Is Love",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "4EGczv7iiEk",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Baby You're A Rich Man",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "i5m-sgtwFck",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Hello Goodbye",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "P2C3f0Atcoo",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "I Am The Walrus",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "dqOFHyQHEF4",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Magical Mystery Tour",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "ge214KAOnLY",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "The Fool On The Hill",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "rtnAI1hgNyI",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Flying",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Z1ONJQLdZrk",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Blue Jay Way",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "ixmOAb6qzvY",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Your Mother Should Know",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "tCXsFjzMKdc",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Lady Madonna",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "czhd27cN2dg",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "The Inner Light",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "swT6YTPYwgM",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Hey Jude",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "mQER0A0ej0M",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Revolution",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "6MbqzDm1uCo",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Back In The USSR",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "yOYArc7mFiE",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Dear Prudence",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "I4xw_Dx0pIg",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Glass Onion",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "jGhcsuqNIOc",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Ob-La-Di, Ob-La-Da",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "vYEY5Jmz3pU",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Wild Honey Pie",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "iUndtEiqZc4",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "The Continuing Story Of Bungalow Bill",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "5yAOb477ano",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "While My Guitar Gently Weeps",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "YFDg-pgE0Hk",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Happiness Is A Warm Gun",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "nIR6AAjEg5U",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Martha My Dear",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "SQaqoNZ_35o",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I'm So Tired",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "bJ_OMbWJ46g",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Blackbird",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "c5GCNDw4X_0",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Piggies",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "t0nzZ8-kIf0",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Rocky Raccoon",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "y7WBngMzqS4",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Don't Pass Me By",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "U7ivAZqWKH0",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Why Don't We Do It In The Road",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "V7jel2l_iag",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I Will",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "SZBsVbKROV0",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Julia",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "OKDloS2gBHs",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Birthday",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "UeOHAzjxLhk",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Yer Blues",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "huR__xAcUQs",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Mother Nature's Son",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "9Ta9FUOQ4oY",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Everybody's Got Something To Hide Except For Me And My Monkey",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "4fv_gCn1CUU",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Sexy Sadie",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "l5DMdnf9me0",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Helter Skelter",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Uk1hCSA89fc",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Long, Long, Long",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "yp5elOxcT34",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Honey Pie",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "1ELUBYZ61o4",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Savoy Truffle",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "eHlyjSm0eR4",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Cry Baby Cry",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Lb6TyIIb1fI",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Revolution #9",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "jF7SgFtSbaI",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Good Night",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "FBxeM77LO7w",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Only A Northern Song",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "vcvd-L73Cqs",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "All Together Now",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "73lj5qJbrms",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Hey Bulldog",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "g6DVE305g0s",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "It's All Too Much",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "2zc3idF_IZ0",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Get Back",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "xNQXWAeLo3s",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Don't Let Me Down",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Xz1g63DlVAU",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "The Ballad Of John And Yoko",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "oZnm_s3wZeo",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Old Brown Shoe",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "GGUzvyIdy9A",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Let It Be",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "AbNFLI720_U",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "You Know My Name (Look Up The Number)",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "iMhKWOP6EZQ",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Across The Universe",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "eqUzU552X8A",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Two Of Us",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "dwtaADfz2WU",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Dig A Pony",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "cxjzrfXMkao",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I Me Mine",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "LBZ6hg7RVp8",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Dig It",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "CAtFrU978Xc",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "I've Got A Feeling",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "3pPZRgb7uc8",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "One After 909",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "RLjJ3VrRKx4",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "The Long And Winding Road",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "GLkhWfVIxi8",
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "For You Blue",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Li9hWkZmh7g",
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Free As A Bird",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "6cDHvw8fn2c",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Real Love",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "Y2iDmuoIRl0",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Now And Then",
+    "artist": null,
+    "group": "beatles",
+    "videoId": "AW55J2zE3N4",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "I'm Down",
+    "artist": "The Beatles",
+    "group": "beatles",
+    "videoId": "lOWrScjXMRE",
+    "note": null,
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "In Spite Of All The Danger",
+    "artist": "The Beatles",
+    "group": "beatles",
+    "videoId": "hADNCcYFjc0",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Child Of Nature",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "cGAw_k3maXs",
+    "note": null,
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Love",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "MUTz3LQEq1Q",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Jealous Guy",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "bayp3-VbyMk",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Oh My Love",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "u3QZVdqUidw",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Imagine",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "0DNwYnJivJw",
+    "note": null,
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Beautiful Boy (Darling Boy)",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "1BZkYfqa4Fs",
+    "note": null,
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Happy Xmas (War Is Over)",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "8JhBG5UyYP8",
+    "note": null,
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Hold On",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "DzQy-EsNfuM",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "(Just Like) Starting Over",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "dfbAAiL5ec8",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Woman",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "e-gOfkB3TDE",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Working Class Hero",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "DeiJUW35drY",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I'm Losing You",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "kVQB2p2JiWQ",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Mind Games",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "QLeObvcUii4",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Mother",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "3D0nMzHjMR8",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Give Peace A Chance",
+    "artist": "Plastic Ono Band",
+    "group": "solo",
+    "videoId": "tEztCyoy96A",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Look At Me",
+    "artist": "John Lennon",
+    "group": "solo",
+    "videoId": "NOBap35ohx8",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "My Sweet Lord",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "6wHBsMoHFWs",
+    "note": null,
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "All Things Must Pass",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "Z9RapVptT1k",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Got My Mind Set on You",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "SuJuJA5k44Y",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Unknown Delight",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "9cTCTfjTndU",
+    "note": null,
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "What Is Life",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "5Y5olEjNjAw",
+    "note": "2009 Remaster",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Give Me Love (Give Me Peace On Earth)",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "8LqCMF-nr8s",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Isn't It A Pity",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "-n-LULDiJxk",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Faster",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": null,
+    "note": null,
+    "tier": null,
+    "excluded": true
+  },
+  {
+    "title": "Not Guilty",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "84MOwegIxT0",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Blow Away",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "AmdhBUrJi2A",
+    "note": null,
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "This Is Love",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": "CqpaLc81ivs",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Beatles",
+    "artist": "George Harrison",
+    "group": "solo",
+    "videoId": null,
+    "note": null,
+    "tier": null,
+    "excluded": true
+  },
+  {
+    "title": "Photograph",
+    "artist": "Ringo Starr",
+    "group": "solo",
+    "videoId": "nevdSt_2PIM",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Cayenne",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "nGRKmuLE0hs",
+    "note": null,
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Goodbye",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "1EIcqz-sjy4",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Wonderful Christmastime",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "2TfWo3GsIII",
+    "note": null,
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Junk",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "3svS8Nk6-Jk",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Say Say Say",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "hu7hmBJLpkk",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Maybe I'm Amazed",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "yXUNW6lYom8",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Uncle Albert / Admiral Halsey",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "8Y8fDsU0hX8",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Ebony And Ivory",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "r4mlhcFKzXQ",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "The Kiss Of Venus",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "wvs0ny0mSzc",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Winter Bird / When Winter Comes",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "L0hKryxZJV0",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Every Night",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "aSHkH_uMmtY",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "The Back Seat Of My Car",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "yK-FnCnBbUI",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Another Day",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "hhoiwDLVTnE",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Coming Up",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "FI5GSg6594k",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Waterfalls",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "2xL9rbdnzj0",
+    "note": null,
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Home Tonight",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "_UMdKwsjJHg",
+    "note": "audio oficial do canal do Paul: pode ter intro",
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Hope Of Deliverance",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "nQAFTcZlF9w",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Early Days",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "usYRMXf5LoU",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Days We Left Behind",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": null,
+    "note": null,
+    "tier": null,
+    "excluded": true
+  },
+  {
+    "title": "Calico Skies",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "qAlroNJsjzY",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Penina",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "vpNficfiGh0",
+    "note": null,
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Silly Love Songs (Reprise)",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "bcP9rsYHaXk",
+    "note": null,
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "No More Lonely Nights (Ballad)",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "55H6ZsR3SdY",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "No More Lonely Nights (Play Out)",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "xLmxzUc9Y-0",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Goodnight Princess",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "kDkvYFkDyU0",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Live And Let Die",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "08saJgLmytU",
+    "note": null,
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "Band On The Run",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "QZGurhtlve8",
+    "note": null,
+    "tier": 1,
+    "excluded": false
+  },
+  {
+    "title": "My Love",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "fx9r3_Yf-7Q",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Mull Of Kintyre",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "7-QGomDoLQ4",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Jet",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "OPPUFV0GVUc",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Bluebird",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "7xeGCfV8Hh8",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "Tomorrow",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "L8TByNr9ynI",
+    "note": "Wings - Topic, Remastered 2018",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "I Am Your Singer",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "gTl1NHyOpIU",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "With A Little Luck",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "c65L8OSCqv8",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "Let 'Em In",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "C2mnHA51NQE",
+    "note": null,
+    "tier": 2,
+    "excluded": false
+  },
+  {
+    "title": "London Town",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "Ave-C58FM0c",
+    "note": null,
+    "tier": 4,
+    "excluded": false
+  },
+  {
+    "title": "Deliver Your Children",
+    "artist": "Wings",
+    "group": "solo",
+    "videoId": "0Nz91y5uoGM",
+    "note": "audio oficial do canal do Paul: pode ter intro",
+    "tier": 3,
+    "excluded": false
+  },
+  {
+    "title": "One More Kiss",
+    "artist": "Paul McCartney",
+    "group": "solo",
+    "videoId": "ZgRro7MyIEo",
+    "note": null,
+    "tier": 3,
+    "excluded": false
+  }
+]

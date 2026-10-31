@@ -1,0 +1,2962 @@
+[
+  {
+    "code": "ad",
+    "name": "Andorra",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "ae",
+    "name": "Emirados Árabes Unidos",
+    "aliases": [
+      "Emirados",
+      "EAU",
+      "United Arab Emirates"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "af",
+    "name": "Afeganistão",
+    "aliases": [
+      "Afghanistan"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ag",
+    "name": "Antígua e Barbuda",
+    "aliases": [
+      "Antigua e Barbuda",
+      "Antigua and Barbuda"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "ai",
+    "name": "Anguila",
+    "aliases": [
+      "Anguilla"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "al",
+    "name": "Albânia",
+    "aliases": [
+      "Albania"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "am",
+    "name": "Arménia",
+    "aliases": [
+      "Armenia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ao",
+    "name": "Angola",
+    "aliases": [],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "aq",
+    "name": "Antártida",
+    "aliases": [
+      "Antarctica"
+    ],
+    "kind": "other",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ar",
+    "name": "Argentina",
+    "aliases": [],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "as",
+    "name": "Samoa Americana",
+    "aliases": [
+      "American Samoa"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "at",
+    "name": "Áustria",
+    "aliases": [
+      "Austria"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "au",
+    "name": "Austrália",
+    "aliases": [
+      "Australia"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "aw",
+    "name": "Aruba",
+    "aliases": [],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "ax",
+    "name": "Ilhas Åland",
+    "aliases": [
+      "Åland Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "az",
+    "name": "Azerbaijão",
+    "aliases": [
+      "Azerbaijan"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ba",
+    "name": "Bósnia e Herzegovina",
+    "aliases": [
+      "Bósnia",
+      "Bosnia and Herzegovina"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "bb",
+    "name": "Barbados",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "bd",
+    "name": "Bangladesh",
+    "aliases": [],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "be",
+    "name": "Bélgica",
+    "aliases": [
+      "Belgium"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "bf",
+    "name": "Burquina Fasso",
+    "aliases": [
+      "Burkina Faso"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "bg",
+    "name": "Bulgária",
+    "aliases": [
+      "Bulgaria"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "bh",
+    "name": "Barém",
+    "aliases": [
+      "Bahrein",
+      "Bahrain"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "bi",
+    "name": "Burundi",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "bj",
+    "name": "Benim",
+    "aliases": [
+      "Benin"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "bl",
+    "name": "São Bartolomeu",
+    "aliases": [
+      "Saint Barthélemy"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "bm",
+    "name": "Bermudas",
+    "aliases": [
+      "Bermuda"
+    ],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "bn",
+    "name": "Brunei",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "bo",
+    "name": "Bolívia",
+    "aliases": [
+      "Bolivia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "bq",
+    "name": "Países Baixos Caribenhos",
+    "aliases": [
+      "Caribbean Netherlands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "br",
+    "name": "Brasil",
+    "aliases": [
+      "Brazil"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "bs",
+    "name": "Bahamas",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "bt",
+    "name": "Butão",
+    "aliases": [
+      "Bhutan"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "bv",
+    "name": "Ilha Bouvet",
+    "aliases": [
+      "Bouvet Island"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": [
+      "no",
+      "sj"
+    ]
+  },
+  {
+    "code": "bw",
+    "name": "Botsuana",
+    "aliases": [
+      "Botswana"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "by",
+    "name": "Bielorrússia",
+    "aliases": [
+      "Belarus"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "bz",
+    "name": "Belize",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ca",
+    "name": "Canadá",
+    "aliases": [
+      "Canada"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "cc",
+    "name": "Ilhas Cocos (Keeling)",
+    "aliases": [
+      "Cocos (Keeling) Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "cd",
+    "name": "República Democrática do Congo",
+    "aliases": [
+      "RD Congo",
+      "RDC",
+      "Congo-Kinshasa",
+      "DR Congo"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "cf",
+    "name": "República Centro-Africana",
+    "aliases": [
+      "Centro-Africana",
+      "Central African Republic"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "cg",
+    "name": "República do Congo",
+    "aliases": [
+      "Congo",
+      "Congo-Brazzaville",
+      "Republic of the Congo"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ch",
+    "name": "Suíça",
+    "aliases": [
+      "Switzerland"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "ci",
+    "name": "Costa do Marfim",
+    "aliases": [
+      "Côte d'Ivoire",
+      "Cote d'Ivoire",
+      "Ivory Coast"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ck",
+    "name": "Ilhas Cook",
+    "aliases": [
+      "Cook Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "cl",
+    "name": "Chile",
+    "aliases": [],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "cm",
+    "name": "Camarões",
+    "aliases": [
+      "Cameroon"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "cn",
+    "name": "China",
+    "aliases": [],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "co",
+    "name": "Colômbia",
+    "aliases": [
+      "Colombia"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "cr",
+    "name": "Costa Rica",
+    "aliases": [],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "cu",
+    "name": "Cuba",
+    "aliases": [],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "cv",
+    "name": "Cabo Verde",
+    "aliases": [
+      "Cabo-Verde",
+      "Cape Verde"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "cw",
+    "name": "Curaçau",
+    "aliases": [
+      "Curaçao"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "cx",
+    "name": "Ilha Christmas",
+    "aliases": [
+      "Christmas Island"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "cy",
+    "name": "Chipre",
+    "aliases": [
+      "Cyprus"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "cz",
+    "name": "Chéquia",
+    "aliases": [
+      "República Checa",
+      "Czechia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "de",
+    "name": "Alemanha",
+    "aliases": [
+      "Germany"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "dj",
+    "name": "Jibuti",
+    "aliases": [
+      "Djibouti",
+      "Djibuti"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "dk",
+    "name": "Dinamarca",
+    "aliases": [
+      "Denmark"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "dm",
+    "name": "Dominica",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "do",
+    "name": "República Dominicana",
+    "aliases": [
+      "Dominican Republic"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "dz",
+    "name": "Argélia",
+    "aliases": [
+      "Algeria"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ec",
+    "name": "Equador",
+    "aliases": [
+      "Ecuador"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ee",
+    "name": "Estónia",
+    "aliases": [
+      "Estonia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "eg",
+    "name": "Egito",
+    "aliases": [
+      "Egypt"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "eh",
+    "name": "Saara Ocidental",
+    "aliases": [
+      "Western Sahara"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "er",
+    "name": "Eritreia",
+    "aliases": [
+      "Eritrea"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "es",
+    "name": "Espanha",
+    "aliases": [
+      "Spain"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "et",
+    "name": "Etiópia",
+    "aliases": [
+      "Ethiopia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "eu",
+    "name": "União Europeia",
+    "aliases": [
+      "UE",
+      "European Union"
+    ],
+    "kind": "other",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "fi",
+    "name": "Finlândia",
+    "aliases": [
+      "Finland"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "fj",
+    "name": "Fiji",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "fk",
+    "name": "Ilhas Malvinas",
+    "aliases": [
+      "Ilhas Falkland",
+      "Falkland",
+      "Falkland Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "fm",
+    "name": "Micronésia",
+    "aliases": [
+      "Estados Federados da Micronésia",
+      "Micronesia"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "fo",
+    "name": "Ilhas Feroé",
+    "aliases": [
+      "Ilhas Faroé",
+      "Faroe Islands"
+    ],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "fr",
+    "name": "França",
+    "aliases": [
+      "France"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": [
+      "mf"
+    ]
+  },
+  {
+    "code": "ga",
+    "name": "Gabão",
+    "aliases": [
+      "Gabon"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gb",
+    "name": "Reino Unido",
+    "aliases": [
+      "Grã-Bretanha",
+      "UK",
+      "United Kingdom"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "gb-eng",
+    "name": "Inglaterra",
+    "aliases": [
+      "England"
+    ],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gb-nir",
+    "name": "Irlanda do Norte",
+    "aliases": [
+      "Northern Ireland"
+    ],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gb-sct",
+    "name": "Escócia",
+    "aliases": [
+      "Scotland"
+    ],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gb-wls",
+    "name": "País de Gales",
+    "aliases": [
+      "Gales",
+      "Wales"
+    ],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gd",
+    "name": "Granada",
+    "aliases": [
+      "Grenada"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "ge",
+    "name": "Geórgia",
+    "aliases": [
+      "Georgia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "gf",
+    "name": "Guiana Francesa",
+    "aliases": [
+      "French Guiana"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "gg",
+    "name": "Guernsey",
+    "aliases": [],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "gh",
+    "name": "Gana",
+    "aliases": [
+      "Ghana"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "gi",
+    "name": "Gibraltar",
+    "aliases": [],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "gl",
+    "name": "Gronelândia",
+    "aliases": [
+      "Groenlândia",
+      "Greenland"
+    ],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gm",
+    "name": "Gâmbia",
+    "aliases": [
+      "Gambia"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gn",
+    "name": "Guiné",
+    "aliases": [
+      "Guinea"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gp",
+    "name": "Guadalupe",
+    "aliases": [
+      "Guadeloupe"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "gq",
+    "name": "Guiné Equatorial",
+    "aliases": [
+      "Equatorial Guinea"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gr",
+    "name": "Grécia",
+    "aliases": [
+      "Greece"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "gs",
+    "name": "Ilhas Geórgia do Sul e Sandwich do Sul",
+    "aliases": [
+      "South Georgia"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "gt",
+    "name": "Guatemala",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gu",
+    "name": "Guam",
+    "aliases": [],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gw",
+    "name": "Guiné-Bissau",
+    "aliases": [
+      "Guinea-Bissau"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "gy",
+    "name": "Guiana",
+    "aliases": [
+      "Guyana"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "hk",
+    "name": "Hong Kong",
+    "aliases": [],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "hm",
+    "name": "Ilha Heard e Ilhas McDonald",
+    "aliases": [
+      "Heard Island and McDonald Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "hn",
+    "name": "Honduras",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "hr",
+    "name": "Croácia",
+    "aliases": [
+      "Croatia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ht",
+    "name": "Haiti",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "hu",
+    "name": "Hungria",
+    "aliases": [
+      "Hungary"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "id",
+    "name": "Indonésia",
+    "aliases": [
+      "Indonesia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ie",
+    "name": "Irlanda",
+    "aliases": [
+      "Ireland"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "il",
+    "name": "Israel",
+    "aliases": [],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "im",
+    "name": "Ilha de Man",
+    "aliases": [
+      "Isle of Man"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "in",
+    "name": "Índia",
+    "aliases": [
+      "India"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "io",
+    "name": "Território Britânico do Oceano Índico",
+    "aliases": [
+      "British Indian Ocean Territory"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "iq",
+    "name": "Iraque",
+    "aliases": [
+      "Iraq"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ir",
+    "name": "Irão",
+    "aliases": [
+      "Iran"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "is",
+    "name": "Islândia",
+    "aliases": [
+      "Iceland"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "it",
+    "name": "Itália",
+    "aliases": [
+      "Italy"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "je",
+    "name": "Jersey",
+    "aliases": [],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "jm",
+    "name": "Jamaica",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "jo",
+    "name": "Jordânia",
+    "aliases": [
+      "Jordan"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "jp",
+    "name": "Japão",
+    "aliases": [
+      "Japan"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "ke",
+    "name": "Quénia",
+    "aliases": [
+      "Kenya"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "kg",
+    "name": "Quirguistão",
+    "aliases": [
+      "Quirguizistão",
+      "Kyrgyzstan"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "kh",
+    "name": "Camboja",
+    "aliases": [
+      "Cambodia"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ki",
+    "name": "Quiribáti",
+    "aliases": [
+      "Kiribati"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "km",
+    "name": "Comores",
+    "aliases": [
+      "Comoros"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "kn",
+    "name": "São Cristóvão e Neves",
+    "aliases": [
+      "Saint Kitts e Nevis",
+      "Saint Kitts and Nevis"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "kp",
+    "name": "Coreia do Norte",
+    "aliases": [
+      "North Korea"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "kr",
+    "name": "Coreia do Sul",
+    "aliases": [
+      "South Korea"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "kw",
+    "name": "Koweit",
+    "aliases": [
+      "Kuwait"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ky",
+    "name": "Ilhas Caimão",
+    "aliases": [
+      "Ilhas Cayman",
+      "Cayman",
+      "Cayman Islands"
+    ],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "kz",
+    "name": "Cazaquistão",
+    "aliases": [
+      "Kazakhstan"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "la",
+    "name": "Laos",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "lb",
+    "name": "Líbano",
+    "aliases": [
+      "Lebanon"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "lc",
+    "name": "Santa Lúcia",
+    "aliases": [
+      "Saint Lucia"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "li",
+    "name": "Liechtenstein",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "lk",
+    "name": "Sri Lanca",
+    "aliases": [
+      "Sri Lanka"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "lr",
+    "name": "Libéria",
+    "aliases": [
+      "Liberia"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ls",
+    "name": "Lesoto",
+    "aliases": [
+      "Lesotho"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "lt",
+    "name": "Lituânia",
+    "aliases": [
+      "Lithuania"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "lu",
+    "name": "Luxemburgo",
+    "aliases": [
+      "Luxembourg"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "lv",
+    "name": "Letónia",
+    "aliases": [
+      "Latvia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ly",
+    "name": "Líbia",
+    "aliases": [
+      "Libya"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ma",
+    "name": "Marrocos",
+    "aliases": [
+      "Morocco"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "mc",
+    "name": "Mónaco",
+    "aliases": [
+      "Monaco"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "md",
+    "name": "Moldávia",
+    "aliases": [
+      "Moldova"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "me",
+    "name": "Montenegro",
+    "aliases": [],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "mf",
+    "name": "São Martinho (França)",
+    "aliases": [
+      "Saint Martin"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": [
+      "fr"
+    ]
+  },
+  {
+    "code": "mg",
+    "name": "Madagáscar",
+    "aliases": [
+      "Madagascar"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "mh",
+    "name": "Ilhas Marshall",
+    "aliases": [
+      "Marshall Islands"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "mk",
+    "name": "Macedónia do Norte",
+    "aliases": [
+      "Macedónia",
+      "North Macedonia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ml",
+    "name": "Mali",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "mm",
+    "name": "Mianmar",
+    "aliases": [
+      "Myanmar",
+      "Birmânia"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "mn",
+    "name": "Mongólia",
+    "aliases": [
+      "Mongolia"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "mo",
+    "name": "Macau",
+    "aliases": [],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "mp",
+    "name": "Ilhas Marianas Setentrionais",
+    "aliases": [
+      "Northern Mariana Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "mq",
+    "name": "Martinica",
+    "aliases": [
+      "Martinique"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "mr",
+    "name": "Mauritânia",
+    "aliases": [
+      "Mauritania"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ms",
+    "name": "Monserrate",
+    "aliases": [
+      "Montserrat"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "mt",
+    "name": "Malta",
+    "aliases": [],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "mu",
+    "name": "Maurícia",
+    "aliases": [
+      "Mauritius"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "mv",
+    "name": "Maldivas",
+    "aliases": [
+      "Maldives"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "mw",
+    "name": "Maláui",
+    "aliases": [
+      "Malawi"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "mx",
+    "name": "México",
+    "aliases": [
+      "Mexico"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "my",
+    "name": "Malásia",
+    "aliases": [
+      "Malaysia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "mz",
+    "name": "Moçambique",
+    "aliases": [
+      "Mozambique"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "na",
+    "name": "Namíbia",
+    "aliases": [
+      "Namibia"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "nc",
+    "name": "Nova Caledónia",
+    "aliases": [
+      "New Caledonia"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "ne",
+    "name": "Níger",
+    "aliases": [
+      "Niger"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "nf",
+    "name": "Ilha Norfolk",
+    "aliases": [
+      "Norfolk Island"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "ng",
+    "name": "Nigéria",
+    "aliases": [
+      "Nigeria"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ni",
+    "name": "Nicarágua",
+    "aliases": [
+      "Nicaragua"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "nl",
+    "name": "Países Baixos",
+    "aliases": [
+      "Holanda",
+      "Netherlands"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "no",
+    "name": "Noruega",
+    "aliases": [
+      "Norway"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": [
+      "bv",
+      "sj"
+    ]
+  },
+  {
+    "code": "np",
+    "name": "Nepal",
+    "aliases": [],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "nr",
+    "name": "Nauru",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "nu",
+    "name": "Niue",
+    "aliases": [],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "nz",
+    "name": "Nova Zelândia",
+    "aliases": [
+      "New Zealand"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "om",
+    "name": "Omã",
+    "aliases": [
+      "Oman"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "pa",
+    "name": "Panamá",
+    "aliases": [
+      "Panama"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "pe",
+    "name": "Peru",
+    "aliases": [],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "pf",
+    "name": "Polinésia Francesa",
+    "aliases": [
+      "French Polynesia"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "pg",
+    "name": "Papua-Nova Guiné",
+    "aliases": [
+      "Papua New Guinea"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ph",
+    "name": "Filipinas",
+    "aliases": [
+      "Philippines"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "pk",
+    "name": "Paquistão",
+    "aliases": [
+      "Pakistan"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "pl",
+    "name": "Polónia",
+    "aliases": [
+      "Poland"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "pm",
+    "name": "São Pedro e Miquelão",
+    "aliases": [
+      "Saint Pierre and Miquelon"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "pn",
+    "name": "Ilhas Pitcairn",
+    "aliases": [
+      "Pitcairn Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "pr",
+    "name": "Porto Rico",
+    "aliases": [
+      "Puerto Rico"
+    ],
+    "kind": "territory",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ps",
+    "name": "Palestina",
+    "aliases": [
+      "Estado da Palestina",
+      "Palestine"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "pt",
+    "name": "Portugal",
+    "aliases": [],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "pw",
+    "name": "Palau",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "py",
+    "name": "Paraguai",
+    "aliases": [
+      "Paraguay"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "qa",
+    "name": "Catar",
+    "aliases": [
+      "Qatar"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "re",
+    "name": "Reunião",
+    "aliases": [
+      "Réunion"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "ro",
+    "name": "Roménia",
+    "aliases": [
+      "Romenia",
+      "Romania"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "rs",
+    "name": "Sérvia",
+    "aliases": [
+      "Serbia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ru",
+    "name": "Rússia",
+    "aliases": [
+      "Russia"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "rw",
+    "name": "Ruanda",
+    "aliases": [
+      "Rwanda"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "sa",
+    "name": "Arábia Saudita",
+    "aliases": [
+      "Saudi Arabia"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "sb",
+    "name": "Ilhas Salomão",
+    "aliases": [
+      "Solomon Islands"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "sc",
+    "name": "Seicheles",
+    "aliases": [
+      "Seychelles"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "sd",
+    "name": "Sudão",
+    "aliases": [
+      "Sudan"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "se",
+    "name": "Suécia",
+    "aliases": [
+      "Sweden"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "sg",
+    "name": "Singapura",
+    "aliases": [
+      "Singapore"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "sh",
+    "name": "Santa Helena, Ascensão e Tristão da Cunha",
+    "aliases": [
+      "Saint Helena, Ascension and Tristan da Cunha"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "si",
+    "name": "Eslovénia",
+    "aliases": [
+      "Slovenia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "sj",
+    "name": "Svalbard e Jan Mayen",
+    "aliases": [
+      "Svalbard and Jan Mayen"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": [
+      "no",
+      "bv"
+    ]
+  },
+  {
+    "code": "sk",
+    "name": "Eslováquia",
+    "aliases": [
+      "Slovakia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "sl",
+    "name": "Serra Leoa",
+    "aliases": [
+      "Sierra Leone"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "sm",
+    "name": "San Marino",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "sn",
+    "name": "Senegal",
+    "aliases": [],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "so",
+    "name": "Somália",
+    "aliases": [
+      "Somalia"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "sr",
+    "name": "Suriname",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ss",
+    "name": "Sudão do Sul",
+    "aliases": [
+      "South Sudan"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "st",
+    "name": "São Tomé e Príncipe",
+    "aliases": [
+      "São Tomé",
+      "São Tomé and Príncipe"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "sv",
+    "name": "El Salvador",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "sx",
+    "name": "São Martinho (Países Baixos)",
+    "aliases": [
+      "Sint Maarten"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "sy",
+    "name": "Síria",
+    "aliases": [
+      "Syria"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "sz",
+    "name": "Essuatíni",
+    "aliases": [
+      "Suazilândia",
+      "Eswatini",
+      "Swaziland"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "tc",
+    "name": "Ilhas Turcas e Caicos",
+    "aliases": [
+      "Turks and Caicos Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "td",
+    "name": "Chade",
+    "aliases": [
+      "Chad"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "tf",
+    "name": "Terras Austrais e Antárticas Francesas",
+    "aliases": [
+      "French Southern and Antarctic Lands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "tg",
+    "name": "Togo",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "th",
+    "name": "Tailândia",
+    "aliases": [
+      "Thailand"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "tj",
+    "name": "Tajiquistão",
+    "aliases": [
+      "Tajikistan"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "tk",
+    "name": "Toquelau",
+    "aliases": [
+      "Tokelau"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "tl",
+    "name": "Timor-Leste",
+    "aliases": [
+      "Timor"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "tm",
+    "name": "Turquemenistão",
+    "aliases": [
+      "Turkmenistan"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "tn",
+    "name": "Tunísia",
+    "aliases": [
+      "Tunisia"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "to",
+    "name": "Tonga",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "tr",
+    "name": "Turquia",
+    "aliases": [
+      "Turkey"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "tt",
+    "name": "Trindade e Tobago",
+    "aliases": [
+      "Trinidad and Tobago"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "tv",
+    "name": "Tuvalu",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "tw",
+    "name": "Taiwan",
+    "aliases": [
+      "Formosa"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "tz",
+    "name": "Tanzânia",
+    "aliases": [
+      "Tanzania"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "ua",
+    "name": "Ucrânia",
+    "aliases": [
+      "Ukraine"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "ug",
+    "name": "Uganda",
+    "aliases": [],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "um",
+    "name": "Ilhas Menores Distantes dos Estados Unidos",
+    "aliases": [
+      "United States Minor Outlying Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": [
+      "us"
+    ]
+  },
+  {
+    "code": "un",
+    "name": "Organização das Nações Unidas",
+    "aliases": [
+      "ONU",
+      "Nações Unidas",
+      "United Nations"
+    ],
+    "kind": "other",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "us",
+    "name": "Estados Unidos",
+    "aliases": [
+      "EUA",
+      "Estados Unidos da América",
+      "USA",
+      "United States"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": [
+      "um"
+    ]
+  },
+  {
+    "code": "us-ak",
+    "name": "Alaska",
+    "aliases": [
+      "Alasca"
+    ],
+    "kind": "state",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "us-al",
+    "name": "Alabama",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ar",
+    "name": "Arkansas",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-az",
+    "name": "Arizona",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ca",
+    "name": "California",
+    "aliases": [
+      "Califórnia"
+    ],
+    "kind": "state",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "us-co",
+    "name": "Colorado",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ct",
+    "name": "Connecticut",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-de",
+    "name": "Delaware",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-fl",
+    "name": "Florida",
+    "aliases": [
+      "Flórida"
+    ],
+    "kind": "state",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "us-ga",
+    "name": "Georgia",
+    "aliases": [
+      "Geórgia"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-hi",
+    "name": "Hawaii",
+    "aliases": [
+      "Havaí",
+      "Havai"
+    ],
+    "kind": "state",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "us-ia",
+    "name": "Iowa",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-id",
+    "name": "Idaho",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-il",
+    "name": "Illinois",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-in",
+    "name": "Indiana",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ks",
+    "name": "Kansas",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ky",
+    "name": "Kentucky",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-la",
+    "name": "Louisiana",
+    "aliases": [
+      "Luisiana"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ma",
+    "name": "Massachusetts",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-md",
+    "name": "Maryland",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-me",
+    "name": "Maine",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-mi",
+    "name": "Michigan",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-mn",
+    "name": "Minnesota",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-mo",
+    "name": "Missouri",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ms",
+    "name": "Mississippi",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-mt",
+    "name": "Montana",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-nc",
+    "name": "North Carolina",
+    "aliases": [
+      "Carolina do Norte"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-nd",
+    "name": "North Dakota",
+    "aliases": [
+      "Dakota do Norte"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ne",
+    "name": "Nebraska",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-nh",
+    "name": "New Hampshire",
+    "aliases": [
+      "Nova Hampshire"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-nj",
+    "name": "New Jersey",
+    "aliases": [
+      "Nova Jérsia",
+      "Nova Jersey"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-nm",
+    "name": "New Mexico",
+    "aliases": [
+      "Novo México"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-nv",
+    "name": "Nevada",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ny",
+    "name": "New York",
+    "aliases": [
+      "Nova Iorque",
+      "Nova York"
+    ],
+    "kind": "state",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "us-oh",
+    "name": "Ohio",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ok",
+    "name": "Oklahoma",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-or",
+    "name": "Oregon",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-pa",
+    "name": "Pennsylvania",
+    "aliases": [
+      "Pensilvânia"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-ri",
+    "name": "Rhode Island",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-sc",
+    "name": "South Carolina",
+    "aliases": [
+      "Carolina do Sul"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-sd",
+    "name": "South Dakota",
+    "aliases": [
+      "Dakota do Sul"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-tn",
+    "name": "Tennessee",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-tx",
+    "name": "Texas",
+    "aliases": [],
+    "kind": "state",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "us-ut",
+    "name": "Utah",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-va",
+    "name": "Virginia",
+    "aliases": [
+      "Virgínia"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-vt",
+    "name": "Vermont",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-wa",
+    "name": "Washington",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-wi",
+    "name": "Wisconsin",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-wv",
+    "name": "West Virginia",
+    "aliases": [
+      "Virgínia Ocidental"
+    ],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "us-wy",
+    "name": "Wyoming",
+    "aliases": [],
+    "kind": "state",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "uy",
+    "name": "Uruguai",
+    "aliases": [
+      "Uruguay"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "uz",
+    "name": "Usbequistão",
+    "aliases": [
+      "Uzbequistão",
+      "Uzbekistan"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "va",
+    "name": "Vaticano",
+    "aliases": [
+      "Santa Sé",
+      "Cidade do Vaticano",
+      "Vatican City",
+      "Holy See"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "vc",
+    "name": "São Vicente e Granadinas",
+    "aliases": [
+      "Saint Vincent e Granadinas",
+      "São Vicente",
+      "Saint Vincent and the Grenadines"
+    ],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "ve",
+    "name": "Venezuela",
+    "aliases": [],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "vg",
+    "name": "Ilhas Virgens Britânicas",
+    "aliases": [
+      "British Virgin Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "vi",
+    "name": "Ilhas Virgens Americanas",
+    "aliases": [
+      "United States Virgin Islands"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "vn",
+    "name": "Vietname",
+    "aliases": [
+      "Vietnam"
+    ],
+    "kind": "country",
+    "tier": 2,
+    "twins": []
+  },
+  {
+    "code": "vu",
+    "name": "Vanuatu",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "wf",
+    "name": "Wallis e Futuna",
+    "aliases": [
+      "Wallis and Futuna"
+    ],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "ws",
+    "name": "Samoa",
+    "aliases": [],
+    "kind": "country",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "xk",
+    "name": "Kosovo",
+    "aliases": [],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "ye",
+    "name": "Iémen",
+    "aliases": [
+      "Yemen"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "yt",
+    "name": "Mayotte",
+    "aliases": [],
+    "kind": "territory",
+    "tier": 4,
+    "twins": []
+  },
+  {
+    "code": "za",
+    "name": "África do Sul",
+    "aliases": [
+      "South Africa"
+    ],
+    "kind": "country",
+    "tier": 1,
+    "twins": []
+  },
+  {
+    "code": "zm",
+    "name": "Zâmbia",
+    "aliases": [
+      "Zambia"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  },
+  {
+    "code": "zw",
+    "name": "Zimbabué",
+    "aliases": [
+      "Zimbabwe"
+    ],
+    "kind": "country",
+    "tier": 3,
+    "twins": []
+  }
+]
