@@ -31,6 +31,7 @@
         </div>
         <button id="play" class="btn primary big">Tocar</button>
         <div class="t-row">
+          <button id="diag" class="btn small-btn">Diagnóstico (5s)</button>
           <button id="devs" class="btn small-btn">Ver dispositivos</button>
           <button id="reset" class="btn small-btn">Repor correção</button>
           <button id="clear" class="btn small-btn">Limpar pesquisas</button>
@@ -78,6 +79,11 @@ A app corrige sozinha o atraso a cada tentativa: repete 4 ou 5 vezes a mesma dur
           + (m ? `\nTocou ${m.playedMs} ms (erro ${m.error > 0 ? "+" : ""}${m.error} ms) | nova correção ${sp.getBias()} ms\nDispositivo: ${m.device}` : "\n(sem medição)"));
       } catch (e) { log("Erro: " + e.message); }
       $("play").disabled = false;
+    };
+    $("diag").onclick = async () => {
+      $("diag").disabled = true; log("A diagnosticar... (uns 6 segundos)");
+      try { log((await sp.diagnose(cur())).join("\n")); } catch (e) { log("Erro: " + e.message); }
+      $("diag").disabled = false;
     };
     $("devs").onclick = async () => {
       try { const d = await sp.devices(); log(d.length ? "Dispositivos:\n- " + d.join("\n- ") : "Nenhum dispositivo Spotify encontrado. Abre a app do Spotify (PC ou telemóvel) e toca numa música."); }

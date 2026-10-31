@@ -219,12 +219,32 @@ async function measure(requestedMs, bias) {
   const r = await api("GET", "/me/player");
   const played = r.json?.progress_ms;
   if (typeof played !== "number") return;
+  if (played <= 0) { lastMeasure = { requestedMs, playedMs: 0, error: -requestedMs, device: r.json?.device?.name || "?", playing: !!r.json?.is_playing, nothing: true }; return; } // nada tocou: não afinar
   const error = played - requestedMs; // >0: tocou a mais; <0: tocou a menos
   lastMeasure = { requestedMs, playedMs: played, error, device: r.json?.device?.name || "?", playing: !!r.json?.is_playing };
   const next = Math.max(-1000, Math.min(2000, bias + error * 0.6));
   write(LS.bias, Math.round(next));
 }
 export const lastMeasurement = () => lastMeasure;
+
+// Diagnóstico: toca ~5s e mostra, de meio em meio segundo, o que o Spotify diz (a avançar? volume? que faixa?).
+export async function diagnose(song) {
+  const found = await findTrack(song);
+  if (!found) throw new Error("Esta música não foi encontrada no Spotify.");
+  const lines = [`Faixa: ${found.label}`];
+  const t0 = performance.now();
+  await startPlayback(found.uri);
+  lines.push(`Comando de tocar aceite em ${Math.round(performance.now() - t0)} ms`);
+  for (let i = 1; i <= 8; i++) {
+    await sleep(600);
+    const r = await api("GET", "/me/player");
+    const j = r.json;
+    lines.push(`+${Math.round(performance.now() - t0)} ms: ${r.status === 204 || !j ? "sem estado (nada ativo)" :
+      `a tocar=${j.is_playing} | posição=${j.progress_ms} ms | volume=${j.device?.volume_percent ?? "?"}% | ${j.device?.name} | faixa=${j.item?.name ?? "?"}`}`);
+  }
+  await api("PUT", "/me/player/pause");
+  return lines;
+}
 
 // Dispositivos Spotify disponíveis (a música sai do que estiver ativo, não necessariamente deste aparelho).
 export async function devices() {
