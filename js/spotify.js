@@ -110,7 +110,7 @@ async function api(method, path, body) {
 /* ------------------------------------------------------------------ pesquisa da música certa */
 
 const BAD = /\b(live|ao vivo|remix|karaoke|instrumental|tribute|cover|made famous|originally|piano version|acoustic|session|sessions|reprise)\b/i;
-const BAD_ALBUM = /\b(live|tribute|karaoke|lullaby|rendition|string quartet|piano)\b/i;
+const BAD_ALBUM = /\b(live|tribute|karaoke|lullaby|rendition|string quartet|piano|ukulele|symphony|orchestra|imagined|stripped|naked|songtrack|anthology|love)\b/i;
 const BASE = s => normalize(s.replace(/\(.*?\)|\[.*?\]/g, " ")).replace(/ /g, "");
 
 // Nome do artista a procurar. "Wings" é do Paul; a pesquisa do Spotify aceita ambos.
@@ -122,6 +122,11 @@ export function pickBest(items, song) {
   const want = BASE(song.title);
   const wantsSpecial = /\b(demo|reprise|live|remix|acoustic)\b/i.test(song.title);
   const artist = normalize(artistOf(song));
+  // artistas aceites (nome EXATO: "The Beatles Complete On Ukulele" não conta como "The Beatles")
+  const accepted = song.group === "beatles" || !song.artist ? [artist, "the quarrymen"]
+    : song.artist === "Wings" ? ["wings", "paul mccartney"]
+    : song.artist === "Plastic Ono Band" ? ["plastic ono band", "john lennon"]
+    : [normalize(song.artist)];
   let best = null;
   for (const t of items || []) {
     const name = t.name || "";
@@ -135,8 +140,11 @@ export function pickBest(items, song) {
     const lname = name.toLowerCase();
     if ((marker === "reprise" || marker === "play out") && !lname.includes(marker)) continue;
     if (marker !== "reprise" && marker !== "play out" && /\b(reprise|play out)\b/.test(lname) && !/\b(reprise|play out)\b/i.test(song.title)) continue;
+    if (!t.artists?.some(a => accepted.includes(normalize(a.name)))) continue; // cover ou artista errado
     let score = nb === want ? 10 : 0; // prefere sempre o título exato
-    if (t.artists?.some(a => normalize(a.name).includes(artist) || artist.includes(normalize(a.name)))) score += 5;
+    score += 5;
+    if (/remaster/i.test(name + " " + (t.album?.name || ""))) score += 3; // versão de estúdio remasterizada
+    if (BAD_ALBUM.test(t.album?.name || "") && !wantsSpecial) score -= 8;
     if (t.album?.album_type === "album") score += 2;
     if (/\b(greatest|hits|collection|anthology|essential|best of|1962|1967|1970|1\b)/i.test(t.album?.name || "")) score -= 2;
     score += (t.popularity || 0) / 100;
@@ -158,10 +166,21 @@ export async function findTrack(song) {
   const fixed = (await loadStaticIds())[song.videoId];
   if (fixed?.album) return fixed;
   const cache = read(LS.ids, {});
+  if (fixed) { // vem da playlist: falta só o álbum (necessário para o Spotify arrancar a faixa)
+    const c = cache[song.videoId];
+    if (c?.album && c.uri === fixed.uri) return c;
+    const r = await api("GET", `/tracks/${fixed.uri.split(":").pop()}?market=PT`);
+    if (r.status === 429) throw new Error("O Spotify pediu para esperar um pouco; tenta já a seguir.");
+    if (r.status < 400 && r.json?.album?.uri) {
+      const found = { ...fixed, album: r.json.album.uri };
+      write(LS.ids, { ...read(LS.ids, {}), [song.videoId]: found });
+      return found;
+    }
+  }
   if (cache[song.videoId]?.album) return cache[song.videoId]; // entradas antigas (sem álbum) refazem-se
   const title = song.title.replace(/\(.*?\)/g, " ").replace(/\s+/g, " ").trim();
   const artist = artistOf(song);
-  const queries = [`track:"${title}" artist:"${artist}"`, `${title} ${artist}`];
+  const queries = [`track:"${title}" artist:"${artist}"`, `${title} ${artist}`, `track:"${title}" artist:"${artist}" Remastered`, `${title} ${artist} remastered 2009`];
   for (const q of queries) {
     const r = await api("GET", `/search?${new URLSearchParams({ q, type: "track", limit: "10", market: "PT" })}`);
     if (r.status === 429) throw new Error("O Spotify pediu para esperar um pouco; tenta já a seguir.");
