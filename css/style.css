@@ -237,3 +237,11 @@ dialog p { margin: 0 0 18px; font: 600 20px/1.25 var(--display); }
 .seen-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; }
 .seen-row .hint { text-align: left; min-height: 0; }
 .seen-row .btn { width: auto; flex: none; min-height: 36px; padding: 6px 12px; }
+
+/* ---- ícones nos botões "Beatles / Bandeiras / Os dois" ---- */
+.seg.icons button { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 10px 6px 9px; font-size: 14px; }
+.seg.icons .ico { width: 24px; height: 24px; }
+
+/* ---- o disco do logótipo roda ao carregar em Jogar / Treino livre ---- */
+.mark.spinning { animation: spin-go 0.42s cubic-bezier(0.5, 0, 0.8, 0.6) both; }
+@keyframes spin-go { to { transform: rotate(540deg) scale(1.1); } }

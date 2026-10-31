@@ -59,8 +59,9 @@ function renderMenu() {
 
 function bindSeg(id, key) {
   $(id).addEventListener("click", e => {
-    if (!e.target.dataset.v) return;
-    settings[key] = e.target.dataset.v;
+    const btn = e.target.closest("[data-v]"); // o clique pode ser no ícone ou no texto dentro do botão
+    if (!btn) return;
+    settings[key] = btn.dataset.v;
     saveSettings();
     renderMenu();
   });
@@ -538,8 +539,19 @@ Promise.all([loadSongs(), loadFlags()])
   })
   .catch(err => { $("play-levels").textContent = err.message; });
 
-$("play").addEventListener("click", startTraining);
-$("play-levels").addEventListener("click", () => { renderLevels(); show("levels"); });
+// O disco do logótipo dá uma volta antes de entrar (sem esperar se o telemóvel pede "reduzir movimento").
+let spinning = false;
+function spinThen(fn) {
+  if (spinning) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return fn();
+  spinning = true;
+  const mark = document.querySelector(".mark");
+  mark.classList.add("spinning");
+  setTimeout(() => { mark.classList.remove("spinning"); spinning = false; fn(); }, 420);
+}
+// antes: $("play").addEventListener("click", startTraining);
+$("play").addEventListener("click", () => spinThen(startTraining));
+$("play-levels").addEventListener("click", () => spinThen(() => { renderLevels(); show("levels"); }));
 $("opt-norepeat").addEventListener("change", e => { settings.noRepeat = e.target.checked; saveSettings(); renderNoRepeat(); });
 $("seen-reset").addEventListener("click", () => { progress.resetSeen(modeKey()); renderNoRepeat(); });
 $("levels-back").addEventListener("click", () => { renderMenu(); show("home"); });

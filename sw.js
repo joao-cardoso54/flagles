@@ -4,7 +4,7 @@
 // - Bandeiras (flagcdn.com): cache-first; "precache-flags" guarda-as todas para jogar offline.
 // - YouTube e o resto: não são intercetados (o áudio precisa de internet).
 // Ao mudar ficheiros da app, aumentar VERSION para forçar renovação da cache.
-const VERSION = "2026-10-31.22";
+const VERSION = "2026-10-31.23";
 const APP = `flagles-app-${VERSION}`;
 const FLAGS = "flagles-flags-v1";
 
